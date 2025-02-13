@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webshop.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Webshop.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Webshop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Webshop.props",
+      "PackagePath": "build\\Webshop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Webshop.props",
+      "PackagePath": "buildMultiTargeting\\Webshop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Webshop.props",
+      "PackagePath": "buildTransitive\\Webshop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

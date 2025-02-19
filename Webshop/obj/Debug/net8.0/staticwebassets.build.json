@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wqTeph1ubv0ZYQi5zy88xpRjnTMrYfho7RaR3a6TUN8=",
+  "Hash": "afx5CwYCI56Gm6tISsNYdST0NudYqqlVr59LOBTBSS4=",
   "Source": "Webshop",
   "BasePath": "_content/Webshop",
   "Mode": "Default",
@@ -129,6 +129,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\access-denied.jpg",
+      "SourceId": "Webshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\",
+      "BasePath": "_content/Webshop",
+      "RelativePath": "images/access-denied.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\access-denied.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\login.png",
+      "SourceId": "Webshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\",
+      "BasePath": "_content/Webshop",
+      "RelativePath": "images/login.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\login.png"
     }
   ]
 }

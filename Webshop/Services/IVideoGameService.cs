@@ -1,4 +1,4 @@
-﻿using Webshop.Models;
+﻿using Webshop.Models.Entities;
 
 namespace Webshop.Services
 {

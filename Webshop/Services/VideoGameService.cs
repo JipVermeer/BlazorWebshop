@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Webshop.Data;
-using Webshop.Models;
+using Webshop.Models.Entities;
 
 namespace Webshop.Services
 {

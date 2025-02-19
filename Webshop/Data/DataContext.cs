@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Webshop.Models;
+using Webshop.Models.Entities;
 
 namespace Webshop.Data
 {
-    public class DataContext : DbContext 
+    public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -19,9 +19,15 @@ namespace Webshop.Data
                 new VideoGame { Id = 2, Title = "Elden Ring", Publisher = "FromSoftware", ReleaseYear = 2022 },
                 new VideoGame { Id = 3, Title = "The Legend of Zelda: Ocarina of Time", Publisher = "Nintendo", ReleaseYear = 1998 }
                 );
+
+            modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, UserName = "admin", Password = "a", Role = "Administrator" },
+                new User { Id = 2, UserName = "user", Password = "u", Role = "User" });
         }
 
         public DbSet<VideoGame> VideoGames { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 
 }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Webshop.Components;
 using Webshop.Data;
@@ -20,6 +21,18 @@ namespace Webshop
 
             builder.Services.AddScoped<IVideoGameService, VideoGameService>();
 
+            //Added after login tut
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.Cookie.Name = "auth_token";
+                    options.LoginPath = "/login";
+                    options.Cookie.MaxAge = TimeSpan.FromMinutes(38);
+                    options.AccessDeniedPath = "/access-denied";
+                });
+            builder.Services.AddAuthorization(); 
+            builder.Services.AddCascadingAuthenticationState();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -34,6 +47,10 @@ namespace Webshop
 
             app.UseStaticFiles();
             app.UseAntiforgery();
+
+            //Added after login tut
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode();

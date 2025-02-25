@@ -1,0 +1,56 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Webshop.Data;
+using Webshop.Models.Entities;
+
+namespace Webshop.Services
+{
+    public class CategoryService : ICategoryService
+    {
+        private readonly DataContext _context;
+
+        public CategoryService(DataContext context)
+        {
+            _context = context;
+        }
+        public async Task<List<Category>> GetAllCategoriesAsync()
+        {
+            var result = await _context.Categories.ToListAsync();
+            return result;
+        }
+
+        public async Task AddCategoryAsync(Category category)
+        {
+            _context.Categories.Add(category);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteCategoryAsync(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            if (category != null)
+            {
+                _context.Categories.Remove(category);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<Category> GetCategoryByIdAsync(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            // not having a catg is not handled yet 
+            return category;
+        }
+
+        public async Task UpdateCategoryAsync(Category category, int id)
+        {
+            var dbCategory = await _context.Categories.FindAsync(id);
+            if (category != null)
+            {
+                dbCategory.Name = category.Name;
+                dbCategory.Description = category.Description;
+
+                await _context.SaveChangesAsync();
+            }
+        }
+    }
+}

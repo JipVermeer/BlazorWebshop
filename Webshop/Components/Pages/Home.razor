@@ -1,4 +1,7 @@
 ﻿@page "/"
+@inject IVideoGameService VideoGameService
+@inject NavigationManager NavigationManager
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 <PageTitle>Home</PageTitle>
 
@@ -9,7 +12,6 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-
                 <AuthorizeView>
                     <NotAuthorized>
                         <span>Je bent niet ingelogd. <a class="fw-bolder" href="/login">Klik hier</a> om in te loggen </span>
@@ -18,6 +20,26 @@
                         <span>Ingelogd als <b>@context.User.Identity.Name</b>. <a class="fw-bolder" href="/logout">Klik hier</a>  om uit te loggen. </span>
                     </Authorized>
                 </AuthorizeView>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card">
+                @* <img src="./images/category.png" class="card-img-top" alt="..."> *@
+                <div class="card-body">
+
+                    @* HIER BEZIG OM DE CATEGORIEN TE TONEN, DAARNA DASHBOARD VOOR ADMIN MAKEN, CATEGORIEN AANPASSEN ED FIXEN, DAN REGISTREREN  *@
+                    <h5 class="card-title">Category 1</h5>
+                    <p class="card-text">Content for category 1</p>
+
+
+
+
+
+
+                </div>
             </div>
         </div>
     </div>

@@ -20,6 +20,7 @@ namespace Webshop
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<IVideoGameService, VideoGameService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             //Added after login tut
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -32,6 +33,7 @@ namespace Webshop
                 });
             builder.Services.AddAuthorization(); 
             builder.Services.AddCascadingAuthenticationState();
+            builder.Services.AddHttpContextAccessor();
 
             var app = builder.Build();
 

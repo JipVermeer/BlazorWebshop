@@ -25,8 +25,24 @@
       "PackagePath": "staticwebassets\\images\\access-denied.jpg"
     },
     {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\cart.jpg",
+      "PackagePath": "staticwebassets\\images\\cart.jpg"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\category.png",
+      "PackagePath": "staticwebassets\\images\\category.png"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\heart.png",
+      "PackagePath": "staticwebassets\\images\\heart.png"
+    },
+    {
       "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\login.png",
       "PackagePath": "staticwebassets\\images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\user.png",
+      "PackagePath": "staticwebassets\\images\\user.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Webshop.Microsoft.AspNetCore.StaticWebAssets.props",

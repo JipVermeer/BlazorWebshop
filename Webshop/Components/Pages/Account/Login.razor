@@ -12,7 +12,6 @@
         <EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
             <DataAnnotationsValidator />
             <div class="mb-3 text-center flex-column">
-                 @* hier die inline css nog anders doen, sws code veranderen? *@
                 <img src="/images/login.png" style="max-height:5rem;" />
                 <h3>LOGIN</h3>
             </div>
@@ -23,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label>Wachtwoord</label>
-                <InputText @bind-Value="Model.Password" class="form-control" placeholder="Vul hier uw wachtwoord in" />
+                <InputText type="password" @bind-Value="Model.Password" class="form-control" placeholder="Vul hier uw wachtwoord in" />
                 <ValidationMessage For="() => Model.Password" />
             </div>
             <div class="mb-3 text-center"> 
@@ -33,6 +32,12 @@
                 <button type="submit" class="btn btn-primary">Inloggen</button>
             </div>
         </EditForm>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border ">
+        <p>Nog geen account? Registreer via onderstaande knop.</p>
+        <a href="/register" class="btn btn-primary  w-100" role="button">Registreren</a>
     </div>
 </div>
 

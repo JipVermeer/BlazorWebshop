@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eCSapi/62Iaf3m1mV1UOvEJwf7C/u4n8uDgaPkqMNjo=",
+  "Hash": "d0C84PhKsT82/1j4MCDgE6HcIthKsqE4azZ8am/LbBM=",
   "Source": "Webshop",
   "BasePath": "_content/Webshop",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\login.png"
+    },
+    {
+      "Identity": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\orange-background.jpg",
+      "SourceId": "Webshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\",
+      "BasePath": "_content/Webshop",
+      "RelativePath": "images/orange-background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\orange-background.jpg"
     },
     {
       "Identity": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\user.png",

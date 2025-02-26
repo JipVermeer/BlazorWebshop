@@ -21,6 +21,7 @@ namespace Webshop
 
             builder.Services.AddScoped<IVideoGameService, VideoGameService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
             //Added after login tut
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

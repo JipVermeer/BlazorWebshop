@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\images\\login.png"
     },
     {
+      "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\orange-background.jpg",
+      "PackagePath": "staticwebassets\\images\\orange-background.jpg"
+    },
+    {
       "Id": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\images\\user.png",
       "PackagePath": "staticwebassets\\images\\user.png"
     },

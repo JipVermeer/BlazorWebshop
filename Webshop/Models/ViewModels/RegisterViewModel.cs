@@ -26,7 +26,7 @@ namespace Webshop.Models.ViewModels
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Vul een emailadres in")]
         [EmailAddress(ErrorMessage = "Vul een geldig emailadres in")]
-        public string? Email { get; set; }
+        public string? UserName { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Vul een wachtwoord in")]
         [MinLength(8, ErrorMessage = "Het wachtwoord moet minimaal 8 tekens lang zijn")]

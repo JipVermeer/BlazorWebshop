@@ -46,12 +46,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XFJlZ2lzdGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/CategoryOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeU92ZXJ2aWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/EditVideoGame.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0VmlkZW9HYW1lLnJhem9y
+[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/EditCategory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0Q2F0ZWdvcnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Error.razor]
@@ -62,12 +62,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/VideoGamesOverview.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWaWRlb0dhbWVzT3ZlcnZpZXcucmF6b3I=
+[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Test/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0XENvdW50ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Test/EditVideoGame.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0XEVkaXRWaWRlb0dhbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Test/VideoGamesOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0XFZpZGVvR2FtZXNPdmVydmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Pages/Test/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0XFdlYXRoZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/JipVe/source/repos/Webshop/Webshop/Components/Routes.razor]

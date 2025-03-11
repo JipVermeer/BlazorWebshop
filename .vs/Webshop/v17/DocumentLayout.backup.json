@@ -3,40 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\JipVe\\source\\repos\\Webshop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\editvideogame.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\editvideogame.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\account\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\account\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\videogamesoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\videogamesoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\videogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\videogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\models\\videogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\models\\videogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\ivideogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\ivideogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\editcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\editcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\categoryoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\categoryoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\account\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\account\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\test\\editvideogame.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\test\\editvideogame.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\components\\pages\\test\\videogamesoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\components\\pages\\test\\videogamesoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\ivideogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\ivideogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\services\\videogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\services\\videogameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\migrations\\20250210094958_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,6 +93,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|c:\\users\\jipve\\source\\repos\\webshop\\webshop\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{5541595E-F710-43BC-9DCA-938D1B14B3D4}|Webshop\\Webshop.csproj|solutionrelative:webshop\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Models\\VideoGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Webshop\\Models\\VideoGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,63 +106,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditVideoGame.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\EditVideoGame.razor",
-              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\EditVideoGame.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\EditVideoGame.razor",
-              "RelativeToolTip": "Webshop\\Components\\Pages\\EditVideoGame.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwDsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-10T10:46:12.377Z",
+              "WhenOpened": "2025-03-10T10:57:19.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryOverview.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\CategoryOverview.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\CategoryOverview.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\CategoryOverview.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\CategoryOverview.razor",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-28T07:56:24.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Webshop\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\CategoryService.cs",
+              "RelativeToolTip": "Webshop\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T08:57:34.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "Webshop\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "Webshop\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "Webshop\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\wwwroot\\app.css",
+              "RelativeToolTip": "Webshop\\wwwroot\\app.css",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-10T09:52:03.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\App.razor",
+              "RelativeToolTip": "Webshop\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-10T10:35:11.896Z",
+              "WhenOpened": "2025-02-26T15:16:34.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Account\\Login.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\Account\\Login.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Account\\Login.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\Account\\Login.razor",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T15:07:02.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VideoGameService.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\VideoGameService.cs",
-              "RelativeDocumentMoniker": "Webshop\\Services\\VideoGameService.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\VideoGameService.cs",
-              "RelativeToolTip": "Webshop\\Services\\VideoGameService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:58:44.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IVideoGameService.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\IVideoGameService.cs",
-              "RelativeDocumentMoniker": "Webshop\\Services\\IVideoGameService.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\IVideoGameService.cs",
-              "RelativeToolTip": "Webshop\\Services\\IVideoGameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:58:19.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "Webshop\\Components\\_Imports.razor",
@@ -127,20 +201,155 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VideoGamesOverview.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\VideoGamesOverview.razor",
-              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\VideoGamesOverview.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\VideoGamesOverview.razor",
-              "RelativeToolTip": "Webshop\\Components\\Pages\\VideoGamesOverview.razor",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADYAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Logout.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Account\\Logout.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\Account\\Logout.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Account\\Logout.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\Account\\Logout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-10T09:53:36.823Z",
+              "WhenOpened": "2025-02-26T15:07:27.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
+              "Title": "EditCategory.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\EditCategory.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\EditCategory.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\EditCategory.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\EditCategory.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-28T08:02:01.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Program.cs",
+              "RelativeDocumentMoniker": "Webshop\\Program.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Program.cs",
+              "RelativeToolTip": "Webshop\\Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwB0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T09:47:49.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Webshop\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-10T10:35:11.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Webshop\\Models\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "Webshop\\Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T15:07:00.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Account\\Register.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\Account\\Register.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Account\\Register.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\Account\\Register.razor",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-28T08:54:13.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "Webshop\\Services\\IUserService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\IUserService.cs",
+              "RelativeToolTip": "Webshop\\Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T08:57:00.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Webshop\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "Webshop\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T08:06:25.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EditVideoGame.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Test\\EditVideoGame.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\Test\\EditVideoGame.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Test\\EditVideoGame.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\Test\\EditVideoGame.razor",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-10T10:46:12.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VideoGameService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\VideoGameService.cs",
+              "RelativeDocumentMoniker": "Webshop\\Services\\VideoGameService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\VideoGameService.cs",
+              "RelativeToolTip": "Webshop\\Services\\VideoGameService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T09:58:44.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IVideoGameService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\IVideoGameService.cs",
+              "RelativeDocumentMoniker": "Webshop\\Services\\IVideoGameService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Services\\IVideoGameService.cs",
+              "RelativeToolTip": "Webshop\\Services\\IVideoGameService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T09:58:19.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VideoGamesOverview.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Test\\VideoGamesOverview.razor",
+              "RelativeDocumentMoniker": "Webshop\\Components\\Pages\\Test\\VideoGamesOverview.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Components\\Pages\\Test\\VideoGamesOverview.razor",
+              "RelativeToolTip": "Webshop\\Components\\Pages\\Test\\VideoGamesOverview.razor",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-10T09:53:36.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "20250210094958_Initial.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Migrations\\20250210094958_Initial.cs",
               "RelativeDocumentMoniker": "Webshop\\Migrations\\20250210094958_Initial.cs",
@@ -148,25 +357,11 @@
               "RelativeToolTip": "Webshop\\Migrations\\20250210094958_Initial.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:49:58.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T09:49:58.725Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Program.cs",
-              "RelativeDocumentMoniker": "Webshop\\Program.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Program.cs",
-              "RelativeToolTip": "Webshop\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBgAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:47:49.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 23,
               "Title": "VideoGame.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Models\\VideoGame.cs",
               "RelativeDocumentMoniker": "Webshop\\Models\\VideoGame.cs",
@@ -174,25 +369,23 @@
               "RelativeToolTip": "Webshop\\Models\\VideoGame.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:43:04.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T09:43:04.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Webshop\\Data\\DataContext.cs",
               "ToolTip": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\Data\\DataContext.cs",
               "RelativeToolTip": "Webshop\\Data\\DataContext.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAApwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T09:41:09.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T09:41:09.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Webshop\\appsettings.Development.json",
@@ -200,12 +393,11 @@
               "RelativeToolTip": "Webshop\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-10T09:40:34.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T09:40:34.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\Webshop\\Webshop\\appsettings.json",
               "RelativeDocumentMoniker": "Webshop\\appsettings.json",
@@ -213,8 +405,7 @@
               "RelativeToolTip": "Webshop\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-10T09:40:31.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T09:40:31.966Z"
             }
           ]
         }

@@ -1,6 +1,10 @@
 ﻿@page "/logout"
+@using Azure
 @using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@using Microsoft.AspNetCore.Identity
 @inject NavigationManager navigationManager
+@inject IJSRuntime JSRuntime;
 
  <div class="row">
     <div class="col-12">
@@ -11,7 +15,7 @@
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-danger fw-bolder">U bent succesvol uitgelogd.</p>
-                    <p><a class="fw-bolder" href="/">Klik hier</a> om naar de homepagina te gaan.</p>
+                     <p><a class="fw-bolder" href="/">Klik hier</a> om naar de homepagina te gaan.</p> 
                 </div>
             </div>
         </div>
@@ -28,7 +32,7 @@
         if (HttpContext.User.Identity.IsAuthenticated)
         {
             await HttpContext.SignOutAsync();
-            navigationManager.NavigateTo("/", true);
+            navigationManager.NavigateTo("/logout", true);
         }
     }
 

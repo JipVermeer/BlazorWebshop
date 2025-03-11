@@ -20,13 +20,14 @@ namespace Webshop.Data
                 new VideoGame { Id = 3, Title = "The Legend of Zelda: Ocarina of Time", Publisher = "Nintendo", ReleaseYear = 1998 }
                 );
 
-            modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, UserName = "admin", Password = "a", Role = "Administrator" },
-                new User { Id = 2, UserName = "user", Password = "u", Role = "User" });
+            //modelBuilder.Entity<User>().HasData(
+            //    new User { Id = 1, UserName = "admin", Password = "a", Role = "Administrator" },
+            //    new User { Id = 2, UserName = "user", Password = "u", Role = "User" });
 
-            modelBuilder.Entity<Category>().HasData(
-                new Category { Id = 1, Name = "Elektronica" },
-                new Category { Id = 2, Name = "Wonen" });
+            //    modelBuilder.Entity<Category>().HasData(
+            //        new Category { Id = 1, Name = "Elektronica" },
+            //        new Category { Id = 2, Name = "Wonen" });
+            //}
         }
 
         public DbSet<VideoGame> VideoGames { get; set; }

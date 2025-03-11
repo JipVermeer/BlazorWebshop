@@ -52,5 +52,10 @@ namespace Webshop.Services
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<bool> CategoryExists(string categoryName)
+        {
+            return await _context.Categories.AnyAsync(c => c.Name == categoryName);
+        }
     }
 }

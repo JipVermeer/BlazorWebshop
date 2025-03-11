@@ -1,7 +1,10 @@
 ﻿@page "/"
-@inject IVideoGameService VideoGameService
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@using Microsoft.AspNetCore.Identity
+@inject ICategoryService CategoryService
 @inject NavigationManager NavigationManager
-@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@rendermode @(new InteractiveServerRenderMode(prerender: true))
 
 <PageTitle>Home</PageTitle>
 
@@ -17,7 +20,7 @@
                         <span>Je bent niet ingelogd. <a class="fw-bolder" href="/login">Klik hier</a> om in te loggen </span>
                     </NotAuthorized>
                     <Authorized>
-                        <span>Ingelogd als <b>@context.User.Identity.Name</b>. <a class="fw-bolder" href="/logout">Klik hier</a>  om uit te loggen. </span>
+                        <span>Ingelogd als <b>@context.User.Identity.Name</b>. <a class="fw-bolder" href="/logout" >Klik hier</a>  om uit te loggen. </span>
                     </Authorized>
                 </AuthorizeView>
             </div>
@@ -29,19 +32,32 @@
             <div class="card">
                 @* <img src="./images/category.png" class="card-img-top" alt="..."> *@
                 <div class="card-body">
-
-                    @* HIER BEZIG OM DE CATEGORIEN TE TONEN, DAARNA DASHBOARD VOOR ADMIN MAKEN, CATEGORIEN AANPASSEN ED FIXEN, DAN REGISTREREN  *@
                     <h5 class="card-title">Category 1</h5>
                     <p class="card-text">Content for category 1</p>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+
+@code {
+    public HttpContext HttpContext { get; set; }
+    List<Category> categories = new List<Category>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        categories = await CategoryService.GetAllCategoriesAsync();
+    }
+
+    // async Task LogOut()
+    // {
+    //     if (HttpContext.User.Identity.IsAuthenticated)
+    //     {
+    //         await HttpContext.SignOutAsync();
+    //         NavigationManager.NavigateTo("/logout", true);
+    //     }
+    // }
+}
+
+

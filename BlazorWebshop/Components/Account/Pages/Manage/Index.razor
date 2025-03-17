@@ -1,0 +1,179 @@
+﻿@page "/Account/Manage"
+
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Identity
+@using BlazorWebshop.Data
+
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject IdentityUserAccessor UserAccessor
+@inject IdentityRedirectManager RedirectManager
+
+<PageTitle>Profile</PageTitle>
+
+<h3>Profile</h3>
+<StatusMessage />
+
+<div class="row">
+    <div class="col-md-6">
+        <EditForm Model="Input" FormName="profile" OnValidSubmit="OnValidSubmitAsync" method="post">
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" role="alert" />
+            <div class="form-floating mb-3">
+                <input type="text" value="@username" class="form-control" placeholder="Please choose your username." disabled />
+                <label for="username" class="form-label">Username</label>
+            </div>
+@*             <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
+                <label for="phone-number" class="form-label">Phone number</label>
+                <ValidationMessage For="() => Input.PhoneNumber" class="text-danger" />
+            </div> *@
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.FirstName" class="form-control" placeholder="Please enter your first name." />
+                <label for="first-name" class="form-label">First Name</label>
+            </div>
+@*             <p>Current First Name: @Input.FirstName</p> *@
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.Prefix" class="form-control" placeholder="Please enter your prefix." />
+                <label for="prefix" class="form-label">Prefix</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.LastName" class="form-control" placeholder="Please enter your last name." />
+                <label for="last-name" class="form-label">Last Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.Street" class="form-control" placeholder="Please enter your street address." />
+                <label for="street" class="form-label">Street</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.HouseNumber" class="form-control" placeholder="Please enter your house number." />
+                <label for="house-number" class="form-label">House Number</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.Zipcode" class="form-control" placeholder="Please enter your zipcode." />
+                <label for="zipcode" class="form-label">Zipcode</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.City" class="form-control" placeholder="Please enter your city." />
+                <label for="city" class="form-label">City</label>
+            </div>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private ApplicationUser user = default!;
+    private string? username;
+    private string? firstName;
+    private string? prefix;
+    private string? lastName;
+    private string? street;
+    private string? houseNumber;
+    private string? zipCode;
+    private string? city;
+    // private string? phoneNumber;
+
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    [SupplyParameterFromForm]
+    private InputModel Input { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await UserAccessor.GetRequiredUserAsync(HttpContext);
+        username = await UserManager.GetUserNameAsync(user);
+
+        firstName = user.FirstName;
+        prefix = user.Prefix;
+        lastName = user.LastName;
+        street = user.Street;
+        houseNumber = user.HouseNumber;
+        zipCode = user.Zipcode;
+        city = user.City;
+        // phoneNumber = await UserManager.GetPhoneNumberAsync(user);
+
+        // Input.PhoneNumber ??= phoneNumber;
+
+        Input.FirstName ??= firstName;
+        Input.Prefix ??= prefix;
+        Input.LastName ??= lastName;
+        Input.Street ??= street;
+        Input.HouseNumber ??= houseNumber;
+        Input.Zipcode ??= zipCode;
+        Input.City ??= city;
+    }
+
+    private async Task OnValidSubmitAsync()
+    {
+        // if (Input.PhoneNumber != phoneNumber)
+        // {
+        //     var setPhoneResult = await UserManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
+        //     if (!setPhoneResult.Succeeded)
+        //     {
+        //         RedirectManager.RedirectToCurrentPageWithStatus("Error: Failed to set phone number.", HttpContext);
+        //     }
+        // }
+
+        // Extra velden
+        user.FirstName = Input.FirstName;
+        user.Prefix = Input.Prefix;
+        user.LastName = Input.LastName;
+        user.Street = Input.Street;
+        user.HouseNumber = Input.HouseNumber;
+        user.Zipcode = Input.Zipcode;
+        user.City = Input.City;
+
+        // Extra velden
+        var updateResult = await UserManager.UpdateAsync(user);
+        if (!updateResult.Succeeded)
+        {
+            RedirectManager.RedirectToCurrentPageWithStatus("Error: Failed to update profile.", HttpContext);
+        }
+
+        await SignInManager.RefreshSignInAsync(user);
+        RedirectManager.RedirectToCurrentPageWithStatus("Your profile has been updated", HttpContext);
+    }
+
+    private sealed class InputModel
+    {
+        // [Phone]
+        // [Display(Name = "Phone number")]
+        // public string? PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
+        public string? FirstName { get; set; }
+
+        [Display(Name = "Prefix")]
+        public string? Prefix { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string? LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Street")]
+        public string? Street { get; set; }
+
+        [Required]
+        [Display(Name = "House Number")]
+        public string? HouseNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Zipcode")]
+        [RegularExpression(@"^\d{4}[A-Z]{2}$", ErrorMessage = "The zipcode must be of the format 0000AB.")]
+        public string? Zipcode { get; set; }
+
+        [Required]
+        [Display(Name = "City")]
+        public string? City { get; set; }
+    }
+}

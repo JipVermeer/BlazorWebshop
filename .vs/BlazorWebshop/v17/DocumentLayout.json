@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\manage\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\account\\pages\\manage\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,14 +51,6 @@
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -45,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\testpages\\auth.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -74,70 +86,59 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Program.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
-              "RelativeToolTip": "BlazorWebshop\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADgv0YAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T10:03:03.279Z",
+              "DocumentIndex": 4,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Routes.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Routes.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:56:36.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:45:43.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
               "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
               "RelativeToolTip": "BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-17T09:04:57.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\appsettings.json",
-              "RelativeDocumentMoniker": "BlazorWebshop\\appsettings.json",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\appsettings.json",
-              "RelativeToolTip": "BlazorWebshop\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-13T10:31:59.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\ApplicationUser.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationUser.cs",
-              "RelativeToolTip": "BlazorWebshop\\Data\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T08:10:11.227Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "BlazorWebshop\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAIYAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T07:40:42.945Z"
+              "WhenOpened": "2025-03-13T07:40:42.945Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "BlazorWebshop\\wwwroot\\app.css",
@@ -149,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Register.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Register.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Account\\Pages\\Register.razor",
@@ -157,12 +158,86 @@
               "RelativeToolTip": "BlazorWebshop\\Components\\Account\\Pages\\Register.razor",
               "ViewState": "AgIAAMMAAAAAAAAAAAAiwNkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T08:38:12.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T08:38:12.339Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-13T10:51:09.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\App.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\App.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-11T15:11:10.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\_Imports.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:49:12.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationUser.cs",
+              "RelativeToolTip": "BlazorWebshop\\Data\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T08:10:11.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\appsettings.json",
+              "RelativeDocumentMoniker": "BlazorWebshop\\appsettings.json",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\appsettings.json",
+              "RelativeToolTip": "BlazorWebshop\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-13T10:31:59.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Program.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
+              "RelativeToolTip": "BlazorWebshop\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADgv0YAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T10:03:03.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "BlazorWebshop\\Data\\ApplicationDbContext.cs",
@@ -170,24 +245,11 @@
               "RelativeToolTip": "BlazorWebshop\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:50:31.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T08:50:31.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NavMenu.razor.css",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
-              "RelativeToolTip": "BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-13T10:51:09.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "20250317085338_AddCustomFieldsToApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250317085338_AddCustomFieldsToApplicationUser.cs",
               "RelativeDocumentMoniker": "BlazorWebshop\\Data\\Migrations\\20250317085338_AddCustomFieldsToApplicationUser.cs",
@@ -199,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "MainLayout.razor.css",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\MainLayout.razor.css",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\MainLayout.razor.css",
@@ -211,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Account\\Pages\\Login.razor",
@@ -223,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Auth.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\TestPages\\Auth.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\TestPages\\Auth.razor",
@@ -235,19 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\App.razor",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\App.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\App.razor",
-              "RelativeToolTip": "BlazorWebshop\\Components\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T15:11:10.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\MainLayout.razor",

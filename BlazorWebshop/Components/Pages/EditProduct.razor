@@ -1,0 +1,175 @@
+﻿@page "/edit-product"
+@page "/edit-product/{Id:int}"
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@using Microsoft.AspNetCore.Authorization
+@using System.Globalization
+@using System.Text.RegularExpressions
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@attribute [Authorize(Roles = "admin")]
+
+@if (Id is null)
+{
+    <PageTitle>Product toevoegen</PageTitle>
+    <h3>Product toevoegen</h3>
+}
+else
+{
+    <PageTitle>@OriginalProductName aanpassen</PageTitle>
+    <h3>@OriginalProductName aanpassen</h3>
+}
+
+<EditForm Model="CurrentProduct" OnSubmit="HandleSubmit">
+    <div>
+        <label for="name">Name</label>
+        <InputText id="name" @bind-Value="CurrentProduct.Name" class="form-control" />
+    </div>
+    <div>
+        <label for="description">Omschrijving</label>
+        <InputText id="description" @bind-Value="CurrentProduct.Description" class="form-control" />
+    </div>
+    <div>
+        <label for="category">Categorie</label>
+        <InputSelect id="category" @bind-Value="CurrentProduct.CategoryId" class="form-control">
+            <option value="" disabled selected>Selecteer</option>
+            @foreach (var category in categoriesWithProducts)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div>
+        <label for="price">Prijs</label>
+        <InputText id="price" @bind-Value="PriceString" class="form-control" />
+    </div>
+    <div>
+        <label for="stock">Stock</label>
+        <InputNumber id="stock" @bind-Value="CurrentProduct.Stock" class="form-control" />
+    </div>
+    <div class="mb-3 text-center">
+        <span class="text-danger">@errorMessage</span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    public Product CurrentProduct { get; set; } = new();
+    private string? errorMessage;
+    private string? OriginalProductName;
+    private string? OriginalProductDescription;
+    private decimal OriginalProductPrice;
+    private int OriginalProductStock;
+    private int OriginalProductCategoryId;
+    private string PriceString { get; set; } = "";
+
+    private List<Category> categoriesWithProducts = new List<Category>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        categoriesWithProducts = await CategoryService.GetAllCategoriesWithProductsAsync();
+
+        if (Id is not null)
+        {
+            var product = await ProductService.GetProductByIdAsync((int)Id);
+            if (product is not null)
+            {
+                CurrentProduct = product;
+                OriginalProductName = product.Name;
+                OriginalProductDescription = product.Description;
+                OriginalProductPrice = product.Price;
+                OriginalProductStock = product.Stock;
+                OriginalProductCategoryId = product.CategoryId;
+            }
+        } else
+        {
+            CurrentProduct.CategoryId = 1;
+        }
+    }
+
+    async Task HandleSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(CurrentProduct.Name))
+        {
+            errorMessage = "De productnaam mag niet leeg zijn.";
+            await ResetProduct();
+        }
+        else if (await ProductService.ProductExists(CurrentProduct.Name))
+        {
+            errorMessage = "Dit product bestaat al.";
+            await ResetProduct();
+        } // else if (CurrentProduct.Price <= 0)
+          // {
+          //     errorMessage = "De prijs moet hoger dan €0 zijn.";
+          // }
+        else if (!await PriceIsValid(PriceString))
+        {
+            errorMessage = "De prijs moet een valide getal groter dan 0 zijn.";
+        } else if (CurrentProduct.Stock < 1)
+        {
+            errorMessage = "De voorraad moet minstens 1 zijn.";
+
+        }
+        else
+        {
+            Console.WriteLine("Form is valid, submitting.");
+            Console.WriteLine(CurrentProduct.CategoryId);
+            if (Id is not null)
+            {
+                // Update
+                await ProductService.UpdateProductAsync(CurrentProduct, (int)Id);
+                NavigationManager.NavigateTo("/products", true);
+            }
+            else
+            {
+                // Add
+                await ProductService.AddProductAsync(CurrentProduct);
+                NavigationManager.NavigateTo("/products", true);
+            }
+        }
+    }
+
+    public async Task<bool> PriceIsValid(string priceString)
+    {
+        priceString = priceString.Replace(",", ".");
+
+        if (Regex.IsMatch(priceString, @"^\d+(\.\d{0,2})?$"))
+        {
+            if (decimal.TryParse(priceString, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal result))
+            {
+                if(result > 0)
+                {
+                    CurrentProduct.Price = Math.Round(result, 2);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private async Task ResetProduct()
+    {
+        if (Id is not null)
+        {
+            var product = await ProductService.GetProductByIdAsync((int)Id);
+            if (product is not null)
+            {
+                CurrentProduct.Name = OriginalProductName;
+                CurrentProduct.Description = OriginalProductDescription;
+                CurrentProduct.Price = OriginalProductPrice;
+                CurrentProduct.Stock = OriginalProductStock;
+                CurrentProduct.CategoryId = OriginalProductCategoryId;
+            }
+        }
+        else
+        {
+            CurrentProduct = new();
+        }
+    }
+
+}

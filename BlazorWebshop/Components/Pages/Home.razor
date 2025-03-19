@@ -1,12 +1,17 @@
 ﻿@page "/"
 @using BlazorWebshop.Components.Account
 @using BlazorWebshop.Data
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> SignInManager
+@inject NavigationManager NavigationManager
 @inject IdentityUserAccessor UserAccessor
 @inject IdentityRedirectManager RedirectManager
+@inject ICategoryService CategoryService
+@* @rendermode @(new InteractiveServerRenderMode(prerender: false)) *@
 
 <PageTitle>Home</PageTitle>
 
@@ -20,16 +25,51 @@
 </AuthorizeView>
 <p>Welkom op de homepagina van de V&amp;D webshop. Navigeer hier naar verschillende categorieën. </p>
 
+@if (categories == null || categories.Count == 0)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="row mt-4">
+        @foreach (var category in categories)
+        {
+            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                <div class="card w-100 d-flex flex-column">
+                     <a href="/categoryProducts/@category.Id" class='stretched-link' @* @onclick="(() => GoToProducts(category.Id))" *@></a> 
+                    @* Hier evt afbeelding -> <img src="./images/category.png" class="card-img-top" alt="...">  *@
+                    <div class="card-body flex-grow-1">
+                        <h5 class="card-title">@category.Name</h5>
+                        <p class="card-text">@category.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
 @code {
-    private ApplicationUser user = default!;
+    private ApplicationUser? user = default!;
     private string? firstName;
+    List<Category> categories = new List<Category>();
 
     [CascadingParameter]
     private HttpContext HttpContext { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
-        user = await UserAccessor.GetRequiredUserAsync(HttpContext);
-        firstName = user.FirstName;
+        if (user != null)
+        {
+            user = await UserAccessor.GetRequiredUserAsync(HttpContext);
+            firstName = user.FirstName;
+        }
+
+        categories = await CategoryService.GetAllCategoriesAsync();
     }
+
+    private void GoToProducts(int categoryId)
+    {
+        NavigationManager.NavigateTo($"/categoryProducts/{categoryId}");
+    }
+
 }

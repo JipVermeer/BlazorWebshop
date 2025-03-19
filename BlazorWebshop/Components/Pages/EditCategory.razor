@@ -1,0 +1,105 @@
+﻿@page "/edit-category"
+@page "/edit-category/{Id:int}"
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@using Microsoft.AspNetCore.Authorization
+@inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@attribute [Authorize(Roles = "admin")]
+
+@if (Id is null)
+{
+    <PageTitle>Categorie toevoegen</PageTitle>
+    <h3>Categorie toevoegen</h3>
+}
+else
+{
+    <PageTitle>@OriginalCategoryName aanpassen</PageTitle>
+    <h3>@OriginalCategoryName aanpassen</h3>
+}
+
+<EditForm Model="CurrentCategory" OnSubmit="HandleSubmit">
+    <div>
+        <label for="name">Name</label>
+        <InputText id="name" @bind-Value="CurrentCategory.Name" class="form-control" />
+    </div>
+    <div>
+        <label for="description">Omschrijving</label>
+        <InputText id="description" @bind-Value="CurrentCategory.Description" class="form-control" />
+    </div>
+    <div class="mb-3 text-center">
+        <span class="text-danger">@errorMessage</span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    public Category CurrentCategory { get; set; } = new();
+    private string? errorMessage;
+    private string? OriginalCategoryName;
+    private string? OriginalCategoryDescription;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id is not null)
+        {
+            var category = await CategoryService.GetCategoryByIdAsync((int)Id);
+            if (category is not null)
+            {
+                CurrentCategory = category;
+                OriginalCategoryName = category.Name;
+                OriginalCategoryDescription = category.Description;
+            }
+        }
+    }
+
+    async Task HandleSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(CurrentCategory.Name))
+        {
+            errorMessage = "De categorienaam mag niet leeg zijn.";
+            await ResetCategory();
+        }
+        else if (await CategoryService.CategoryExists(CurrentCategory.Name))
+        {
+            errorMessage = "Deze categorie bestaat al.";
+            await ResetCategory();
+        } else 
+        {
+            if (Id is not null)
+            {
+                // Update
+                await CategoryService.UpdateCategoryAsync(CurrentCategory, (int)Id);
+                NavigationManager.NavigateTo("/categories", true);
+            }
+            else
+            {
+                // Add
+                await CategoryService.AddCategoryAsync(CurrentCategory);
+                NavigationManager.NavigateTo("/categories", true);
+            }
+        }
+    }
+
+    private async Task ResetCategory()
+    {
+        if (Id is not null)
+        {
+            var category = await CategoryService.GetCategoryByIdAsync((int)Id);
+            if (category is not null)
+            {
+                CurrentCategory.Name = OriginalCategoryName;
+                CurrentCategory.Description = OriginalCategoryDescription;
+            }
+        }
+        else
+        {
+            CurrentCategory = new(); 
+        }
+    }
+
+}

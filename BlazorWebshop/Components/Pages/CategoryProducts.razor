@@ -1,0 +1,59 @@
+﻿@page "/categoryProducts/{categoryId:int}"
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+ <h3>@categoryName</h3> 
+
+@if (Products != null && Products.Any())
+{
+     <table class="table">
+                <thead>
+                    <tr>
+                        <th>Naam</th>
+                        <th>Beschrijving (optioneel)</th>
+                        <th>Prijs</th>
+                        <th>Voorraad</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Products)
+                    {
+                        <tr>
+                            <td>@product.Name</td>
+                            <td>@product.Description</td>
+                            <td>@product.Price</td>
+                            <td>@product.Stock</td>
+                            <td>Add Button</td>
+                            <td>Add Button</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Er zijn nog geen producten in deze categorie.</p>
+}
+
+@code {
+    [Parameter] 
+    public int categoryId { get; set; }
+
+    public Category Category { get; set; }
+    public string categoryName;
+
+     public List<Product> Products { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+            Category = await CategoryService.GetCategoryByIdAsync(categoryId);
+            categoryName = Category.Name;
+
+            Products = await ProductService.GetProductsByCategoryAsync(categoryId);
+    }
+}

@@ -1,0 +1,92 @@
+﻿@page "/products"
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@using Microsoft.AspNetCore.Authorization
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@attribute [Authorize(Roles = "admin")]
+
+<PageTitle>Producten</PageTitle>
+<h3 class="mb-3">Producten</h3>
+
+@if (products.Count == 0)
+{
+    <p><em>Loading categories...</em></p>
+}
+else
+{
+    @foreach (var category in products)
+    {
+        <h5>@category.Name</h5>
+
+        @if (category.Products != null && category.Products.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Naam</th>
+                        <th>Beschrijving (optioneel)</th>
+                        <th>Prijs</th>
+                        <th>Voorraad</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in category.Products)
+                    {
+                        <tr>
+                            <td>@product.Name</td>
+                            <td>@product.Description</td>
+                            <td>@product.Price</td>
+                            <td>@product.Stock</td>
+                            <td>
+                                <button class="btn btn-primary" @onclick="@(() => EditProduct(product.Id))">Aanpassen</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" @onclick="@(() => DeleteProduct(product.Id))">Verwijderen</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Er zijn nog geen producten in deze categorie.</p>
+        }
+    }
+
+    <button class="btn btn-primary" @onclick="AddProduct">Product toevoegen</button>
+}
+
+@code {
+    List<Category> products = new List<Category>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        // products = await ProductService.GetAllProductsAsync();
+        products = await CategoryService.GetAllCategoriesWithProductsAsync();
+    }
+
+    void EditProduct(int? id)
+    {
+        NavigationManager.NavigateTo($"/edit-product/{id}");
+    }
+
+    async Task DeleteProduct(int id)
+    {
+        await ProductService.DeleteProductAsync(id);
+        // DIT MOET ANDERS 
+        // products = await ProductService.GetAllProductsAsync();
+        products = await CategoryService.GetAllCategoriesWithProductsAsync();
+    }
+
+    void AddProduct()
+    {
+        NavigationManager.NavigateTo($"/edit-product");
+    }
+
+}

@@ -3,16 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\categoryproducts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\categoryproducts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\productmanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\productmanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\editcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\editcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\categorymanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\categorymanager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\editproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\editproduct.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\manage\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\account\\pages\\manage\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318101712_AddProductTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BlazorWebshop\\Data\\Migrations\\20250318101712_AddProductTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318081904_AddCategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BlazorWebshop\\Data\\Migrations\\20250318081904_AddCategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\manage\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\account\\pages\\manage\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -27,28 +95,12 @@
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -73,6 +125,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\data\\migrations\\20250317085338_addcustomfieldstoapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\data\\migrations\\20250317085338_addcustomfieldstoapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|c:\\users\\jipve\\source\\repos\\blazorwebshop\\blazorwebshop\\data\\migrations\\20250318082323_addcategoriestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{203C4C44-C9BC-4E52-BF4D-FC516DE8DE99}|BlazorWebshop\\BlazorWebshop.csproj|solutionrelative:blazorwebshop\\data\\migrations\\20250318082323_addcategoriestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,11 +138,265 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryProducts.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\CategoryProducts.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\CategoryProducts.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\CategoryProducts.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\CategoryProducts.razor",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwCQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-18T09:37:29.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductManager.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\ProductManager.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\ProductManager.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\ProductManager.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\ProductManager.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-18T11:30:01.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditCategory.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\EditCategory.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\EditCategory.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\EditCategory.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\EditCategory.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-18T07:57:57.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Models\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Models\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Models\\Entities\\Product.cs",
+              "RelativeToolTip": "BlazorWebshop\\Models\\Entities\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T10:02:53.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAABUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:45:43.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryManager.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\CategoryManager.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\CategoryManager.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\CategoryManager.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\CategoryManager.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-18T07:57:48.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "EditProduct.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\EditProduct.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\EditProduct.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\EditProduct.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\EditProduct.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-18T11:30:11.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\CategoryService.cs",
+              "RelativeToolTip": "BlazorWebshop\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T07:59:35.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\IProductService.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Services\\IProductService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\IProductService.cs",
+              "RelativeToolTip": "BlazorWebshop\\Services\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T10:39:40.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "BlazorWebshop\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T08:00:06.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Services\\ProductService.cs",
+              "RelativeToolTip": "BlazorWebshop\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T10:39:25.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Models\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Models\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Models\\Entities\\Category.cs",
+              "RelativeToolTip": "BlazorWebshop\\Models\\Entities\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T07:59:01.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "BlazorWebshop\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T08:50:31.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T07:40:42.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Program.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
+              "RelativeToolTip": "BlazorWebshop\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T10:03:03.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20250318101712_AddProductTable.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318101712_AddProductTable.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\Migrations\\20250318101712_AddProductTable.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318101712_AddProductTable.cs",
+              "RelativeToolTip": "BlazorWebshop\\Data\\Migrations\\20250318101712_AddProductTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T10:17:13.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\_Imports.razor",
+              "RelativeToolTip": "BlazorWebshop\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T14:49:12.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "BlazorWebshop\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\wwwroot\\app.css",
+              "RelativeToolTip": "BlazorWebshop\\wwwroot\\app.css",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-13T08:12:49.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "20250318082323_AddCategoriesTable.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318082323_AddCategoriesTable.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\Migrations\\20250318082323_AddCategoriesTable.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318082323_AddCategoriesTable.cs",
+              "RelativeToolTip": "BlazorWebshop\\Data\\Migrations\\20250318082323_AddCategoriesTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T08:23:23.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20250318081904_AddCategories.cs",
+              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318081904_AddCategories.cs",
+              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\Migrations\\20250318081904_AddCategories.cs",
+              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250318081904_AddCategories.cs",
+              "RelativeToolTip": "BlazorWebshop\\Data\\Migrations\\20250318081904_AddCategories.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T08:19:05.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Routes.razor",
@@ -94,25 +404,11 @@
               "RelativeToolTip": "BlazorWebshop\\Components\\Routes.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T14:56:36.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T14:56:36.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "BlazorWebshop\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T14:45:43.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "Index.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
@@ -120,37 +416,11 @@
               "RelativeToolTip": "BlazorWebshop\\Components\\Account\\Pages\\Manage\\Index.razor",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T09:04:57.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T09:04:57.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "BlazorWebshop\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAAIYAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T07:40:42.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "app.css",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\wwwroot\\app.css",
-              "RelativeDocumentMoniker": "BlazorWebshop\\wwwroot\\app.css",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\wwwroot\\app.css",
-              "RelativeToolTip": "BlazorWebshop\\wwwroot\\app.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-13T08:12:49.732Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 23,
               "Title": "Register.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Register.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Account\\Pages\\Register.razor",
@@ -162,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 20,
               "Title": "NavMenu.razor.css",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
@@ -170,12 +440,11 @@
               "RelativeToolTip": "BlazorWebshop\\Components\\Layout\\NavMenu.razor.css",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-13T10:51:09.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T10:51:09.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 22,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\App.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\App.razor",
@@ -183,25 +452,11 @@
               "RelativeToolTip": "BlazorWebshop\\Components\\App.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T15:11:10.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T15:11:10.4Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\_Imports.razor",
-              "RelativeToolTip": "BlazorWebshop\\Components\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T14:49:12.505Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 24,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "BlazorWebshop\\Data\\ApplicationUser.cs",
@@ -213,7 +468,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\appsettings.json",
               "RelativeDocumentMoniker": "BlazorWebshop\\appsettings.json",
@@ -225,31 +480,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Program.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Program.cs",
-              "RelativeToolTip": "BlazorWebshop\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADgv0YAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T10:03:03.279Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "BlazorWebshop\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "BlazorWebshop\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:50:31.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "20250317085338_AddCustomFieldsToApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Data\\Migrations\\20250317085338_AddCustomFieldsToApplicationUser.cs",
               "RelativeDocumentMoniker": "BlazorWebshop\\Data\\Migrations\\20250317085338_AddCustomFieldsToApplicationUser.cs",
@@ -261,7 +492,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "MainLayout.razor.css",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\MainLayout.razor.css",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\MainLayout.razor.css",
@@ -273,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Account\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Account\\Pages\\Login.razor",
@@ -285,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "Auth.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Pages\\TestPages\\Auth.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Pages\\TestPages\\Auth.razor",
@@ -297,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\JipVe\\source\\repos\\BlazorWebshop\\BlazorWebshop\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "BlazorWebshop\\Components\\Layout\\MainLayout.razor",

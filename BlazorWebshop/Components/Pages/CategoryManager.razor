@@ -1,0 +1,77 @@
+﻿@page "/categories"
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@using Microsoft.AspNetCore.Authorization
+@inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@attribute [Authorize(Roles = "admin")]
+
+<PageTitle>Categorieën</PageTitle>
+<h3>Categorieën</h3>
+
+@if (categories.Count == 0)
+{
+    <p><em>Loading categories...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Beschrijving (optioneel)</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in categories)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>@category.Description</td>
+                    <td><button class="btn btn-primary" @onclick="@(() => EditCategory(category.Id))">Aanpassen</button></td>
+                    <td><button class="btn btn-danger" @onclick="@(() => DeleteCategory(category.Id))">Verwijderen</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary" @onclick="AddCategory">Categorie toevoegen</button>
+}
+
+@code {
+    List<Category> categories = new List<Category>();
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     categories = await CategoryService.GetAllCategoriesAsync();
+    // }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        categories = await CategoryService.GetAllCategoriesAsync();
+        // StateHasChanged();
+        // await InvokeAsync(StateHasChanged);
+        // await Task.Yield();
+    }
+
+    void EditCategory(int? id)
+    {
+        NavigationManager.NavigateTo($"/edit-category/{id}");
+    }
+
+    async Task DeleteCategory(int id)
+    {
+        await CategoryService.DeleteCategoryAsync(id);
+        categories = await CategoryService.GetAllCategoriesAsync();
+    }
+
+    void AddCategory()
+    {
+        NavigationManager.NavigateTo($"/edit-category");
+    }
+
+}
+

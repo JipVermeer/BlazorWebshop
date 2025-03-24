@@ -3,6 +3,7 @@
 @using BlazorWebshop.Services
 @using Microsoft.AspNetCore.Authorization
 @inject ICategoryService CategoryService
+@inject CategoryStateService CategoryState
 @inject NavigationManager NavigationManager
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 @attribute [Authorize(Roles = "admin")]
@@ -44,17 +45,9 @@ else
 @code {
     List<Category> categories = new List<Category>();
 
-    // protected override async Task OnInitializedAsync()
-    // {
-    //     categories = await CategoryService.GetAllCategoriesAsync();
-    // }
-
     protected override async Task OnParametersSetAsync()
     {
         categories = await CategoryService.GetAllCategoriesAsync();
-        // StateHasChanged();
-        // await InvokeAsync(StateHasChanged);
-        // await Task.Yield();
     }
 
     void EditCategory(int? id)
@@ -66,6 +59,8 @@ else
     {
         await CategoryService.DeleteCategoryAsync(id);
         categories = await CategoryService.GetAllCategoriesAsync();
+
+        CategoryState.NotifyStateChanged();
     }
 
     void AddCategory()

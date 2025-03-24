@@ -17,6 +17,9 @@ button.nav-button:hover {
     gap: 20px;
 }
 
+dropdown-menu {
+    background-color: #adb5bd;
+}
 
 .nav-item {
     display: flex;

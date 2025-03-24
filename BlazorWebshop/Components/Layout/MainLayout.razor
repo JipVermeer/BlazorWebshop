@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@inherits LayoutComponentBase
+@inject ICategoryService CategoryService
 
 @* <div class="page">
     <div class="sidebar">
@@ -16,7 +19,7 @@
     </main>
 </div> *@
 
-<NavMenu />
+ <NavMenu /> 
 
 <main>
     <article class="content px-4">
@@ -30,3 +33,12 @@
     <a class="dismiss">🗙</a>
 </div>
 
+@code {
+    private List<Category> categories = new List<Category>();
+
+    // Inject your category service to fetch categories
+    protected override async Task OnInitializedAsync()
+    {
+        categories = await CategoryService.GetAllCategoriesAsync(); // Assuming you have a service to fetch categories
+    }
+}

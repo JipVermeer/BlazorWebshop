@@ -10,6 +10,6 @@ namespace BlazorWebshop.Services
         Task AddCategoryAsync(Category category);
         Task UpdateCategoryAsync(Category category, int id);
         Task DeleteCategoryAsync(int id);
-        Task<bool> CategoryExists(string categoryName);
+        Task<bool> CategoryExists(string categoryName, int? id);
     }
 }

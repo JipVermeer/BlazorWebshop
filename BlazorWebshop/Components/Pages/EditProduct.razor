@@ -34,7 +34,12 @@ else
     <div>
         <label for="category">Categorie</label>
         <InputSelect id="category" @bind-Value="CurrentProduct.CategoryId" class="form-control">
-            <option value="" disabled selected>Selecteer</option>
+
+            @if(Id is null)
+            {
+                <option value="" selected>Selecteer</option>
+            }
+
             @foreach (var category in categoriesWithProducts)
             {
                 <option value="@category.Id">@category.Name</option>
@@ -85,10 +90,11 @@ else
                 OriginalProductPrice = product.Price;
                 OriginalProductStock = product.Stock;
                 OriginalProductCategoryId = product.CategoryId;
+                PriceString = CurrentProduct.Price.ToString();
             }
         } else
         {
-            CurrentProduct.CategoryId = 1;
+            CurrentProduct.Stock = 1;
         }
     }
 
@@ -99,7 +105,7 @@ else
             errorMessage = "De productnaam mag niet leeg zijn.";
             await ResetProduct();
         }
-        else if (await ProductService.ProductExists(CurrentProduct.Name))
+        else if (await ProductService.ProductExists(CurrentProduct.Name, Id))
         {
             errorMessage = "Dit product bestaat al.";
             await ResetProduct();
@@ -114,6 +120,10 @@ else
         {
             errorMessage = "De voorraad moet minstens 1 zijn.";
 
+        }
+        else if (CurrentProduct.CategoryId < 1)
+        {
+            errorMessage = "Selecteer een categorie.";
         }
         else
         {

@@ -1,40 +1,51 @@
-﻿using BlazorWebshop.Models.Entities;
-using BlazorWebshop.Data;
+﻿using BlazorWebshop.Data;
+using BlazorWebshop.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazorWebshop.Services
 {
     public class ProductService : IProductService
     {
-        private readonly ApplicationDbContext _context;
+        //private readonly ApplicationDbContext _context;
 
-        public ProductService(ApplicationDbContext context)
+        private readonly IDbContextFactory<ApplicationDbContext> _contextFactory;
+
+        //public ProductService(ApplicationDbContext context)
+        //{
+        //    _context = context;
+        //}
+
+        public ProductService(IDbContextFactory<ApplicationDbContext> contextFactory)
         {
-            _context = context;
+            _contextFactory = contextFactory;
         }
 
         public async Task<List<Product>> GetProductsByCategoryAsync(int categoryId)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var result = await _context.Products
-                .Where(p => p.CategoryId == categoryId)  
+                .Where(p => p.CategoryId == categoryId)
                 .ToListAsync();
             return result;
         }
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var product = await _context.Products.FindAsync(id);
             return product;
         }
 
         public async Task AddProductAsync(Product product)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteProductAsync(int id)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var product = await _context.Products.FindAsync(id);
             if (product != null)
             {
@@ -45,6 +56,7 @@ namespace BlazorWebshop.Services
 
         public async Task UpdateProductAsync(Product product, int id)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var dbProduct = await _context.Products.FindAsync(id);
             if (dbProduct != null)
             {
@@ -57,9 +69,10 @@ namespace BlazorWebshop.Services
             }
         }
 
-        public async Task<bool> ProductExists(string productName)
+        public async Task<bool> ProductExists(string productName, int? productId = null)
         {
-            return await _context.Products.AnyAsync(p => p.Name == productName);
+            await using var _context = _contextFactory.CreateDbContext();
+            return await _context.Products.AnyAsync(p => p.Name == productName && (productId == null || p.Id != productId));
         }
     }
 }

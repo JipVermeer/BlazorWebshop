@@ -11,18 +11,12 @@
 @inject IdentityUserAccessor UserAccessor
 @inject IdentityRedirectManager RedirectManager
 @inject ICategoryService CategoryService
-@* @rendermode @(new InteractiveServerRenderMode(prerender: false)) *@
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@rendermode @(new InteractiveServerRenderMode(prerender: false)) 
 
 <PageTitle>Home</PageTitle>
 
- <AuthorizeView>
-    <Authorized>
-        <h1>Hallo, @firstName!</h1>
-    </Authorized>
-    <NotAuthorized>
-        <h1>Hallo, gast!</h1>
-    </NotAuthorized>
-</AuthorizeView>
+<h1>Hallo, @firstName!</h1>
 <p>Welkom op de homepagina van de V&amp;D webshop. Navigeer hier naar verschillende categorieën. </p>
 
 @if (categories == null || categories.Count == 0)
@@ -36,7 +30,7 @@ else
         {
             <div class="col-12 col-sm-6 col-md-4 d-flex">
                 <div class="card w-100 d-flex flex-column">
-                     <a href="/categoryProducts/@category.Id" class='stretched-link' @* @onclick="(() => GoToProducts(category.Id))" *@></a> 
+                    <a href="/categoryProducts/@category.Id" class='stretched-link'></a>
                     @* Hier evt afbeelding -> <img src="./images/category.png" class="card-img-top" alt="...">  *@
                     <div class="card-body flex-grow-1">
                         <h5 class="card-title">@category.Name</h5>
@@ -49,20 +43,32 @@ else
 }
 
 @code {
-    private ApplicationUser? user = default!;
     private string? firstName;
     List<Category> categories = new List<Category>();
 
     [CascadingParameter]
-    private HttpContext HttpContext { get; set; } = default!;
+    private Task<AuthenticationState> authenticationStateTask { get; set; } = default!;
+
 
     protected override async Task OnInitializedAsync()
     {
-        if (user != null)
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
         {
-            user = await UserAccessor.GetRequiredUserAsync(HttpContext);
-            firstName = user.FirstName;
+            var applicationUser = await UserManager.GetUserAsync(user);
+
+            if (applicationUser != null)
+            {
+                firstName = applicationUser.FirstName;
+            }
         }
+        else
+        {
+            firstName = "gast";
+        }
+
 
         categories = await CategoryService.GetAllCategoriesAsync();
     }

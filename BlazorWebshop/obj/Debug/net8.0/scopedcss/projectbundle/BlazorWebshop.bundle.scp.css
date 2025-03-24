@@ -125,6 +125,9 @@ button.nav-button:hover[b-4d8hs26lq9] {
     gap: 20px;
 }
 
+dropdown-menu[b-4d8hs26lq9] {
+    background-color: #adb5bd;
+}
 
 .nav-item[b-4d8hs26lq9] {
     display: flex;

@@ -27,7 +27,7 @@ else
                 <thead>
                     <tr>
                         <th>Naam</th>
-                        <th>Beschrijving (optioneel)</th>
+                        <th>Beschrijving</th>
                         <th>Prijs</th>
                         <th>Voorraad</th>
                         <th></th>
@@ -67,7 +67,6 @@ else
 
     protected override async Task OnParametersSetAsync()
     {
-        // products = await ProductService.GetAllProductsAsync();
         products = await CategoryService.GetAllCategoriesWithProductsAsync();
     }
 
@@ -79,8 +78,6 @@ else
     async Task DeleteProduct(int id)
     {
         await ProductService.DeleteProductAsync(id);
-        // DIT MOET ANDERS 
-        // products = await ProductService.GetAllProductsAsync();
         products = await CategoryService.GetAllCategoriesWithProductsAsync();
     }
 

@@ -9,7 +9,7 @@
 
 @if (Products != null && Products.Any())
 {
-     <table class="table">
+    <table class="table">
                 <thead>
                     <tr>
                         <th>Naam</th>
@@ -28,11 +28,11 @@
                             <td>@product.Description</td>
                             <td>@product.Price</td>
                             <td>@product.Stock</td>
-                            <td>Add Button</td>
-                            <td>Add Button</td>
-                </tr>
-            }
-        </tbody>
+                            <td>Wishlist</td>
+                            <td>Cart</td>
+                        </tr>
+                    }
+                </tbody>
     </table>
 }
 else

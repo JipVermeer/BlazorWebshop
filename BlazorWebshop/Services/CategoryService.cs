@@ -1,38 +1,43 @@
-﻿using BlazorWebshop.Models.Entities;
-using BlazorWebshop.Data;
+﻿using BlazorWebshop.Data;
+using BlazorWebshop.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazorWebshop.Services
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ApplicationDbContext _context;
 
-        public CategoryService(ApplicationDbContext context)
+        private readonly IDbContextFactory<ApplicationDbContext> _contextFactory;
+
+        public CategoryService(IDbContextFactory<ApplicationDbContext> contextFactory)
         {
-            _context = context;
+            _contextFactory = contextFactory;
         }
         public async Task<List<Category>> GetAllCategoriesAsync()
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var result = await _context.Categories.ToListAsync();
             return result;
         }
 
         public async Task<List<Category>> GetAllCategoriesWithProductsAsync()
         {
+            await using var _context = _contextFactory.CreateDbContext();
             return await _context.Categories
-                .Include(c => c.Products)  
+                .Include(c => c.Products)
                 .ToListAsync();
         }
 
         public async Task AddCategoryAsync(Category category)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteCategoryAsync(int id)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var category = await _context.Categories.FindAsync(id);
             if (category != null)
             {
@@ -43,6 +48,7 @@ namespace BlazorWebshop.Services
 
         public async Task<Category> GetCategoryByIdAsync(int id)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var category = await _context.Categories.FindAsync(id);
             // not having a catg is not handled yet 
             return category;
@@ -50,6 +56,7 @@ namespace BlazorWebshop.Services
 
         public async Task UpdateCategoryAsync(Category category, int id)
         {
+            await using var _context = _contextFactory.CreateDbContext();
             var dbCategory = await _context.Categories.FindAsync(id);
             if (category != null)
             {
@@ -60,9 +67,10 @@ namespace BlazorWebshop.Services
             }
         }
 
-        public async Task<bool> CategoryExists(string categoryName)
+        public async Task<bool> CategoryExists(string categoryName, int? categoryId = null)
         {
-            return await _context.Categories.AnyAsync(c => c.Name == categoryName);
+            await using var _context = _contextFactory.CreateDbContext();
+            return await _context.Categories.AnyAsync(c => c.Name == categoryName && (categoryId == null || c.Id != categoryId));
         }
     }
 }

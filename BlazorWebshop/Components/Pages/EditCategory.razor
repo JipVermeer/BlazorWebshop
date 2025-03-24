@@ -64,7 +64,7 @@ else
             errorMessage = "De categorienaam mag niet leeg zijn.";
             await ResetCategory();
         }
-        else if (await CategoryService.CategoryExists(CurrentCategory.Name))
+        else if (await CategoryService.CategoryExists(CurrentCategory.Name, Id))
         {
             errorMessage = "Deze categorie bestaat al.";
             await ResetCategory();

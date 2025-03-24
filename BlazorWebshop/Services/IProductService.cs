@@ -9,6 +9,6 @@ namespace BlazorWebshop.Services
         Task AddProductAsync(Product product);
         Task DeleteProductAsync(int id);
         Task UpdateProductAsync(Product product, int id);
-        Task<bool> ProductExists(string productName);
+        Task<bool> ProductExists(string productName, int? id);
     }
 }

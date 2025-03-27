@@ -6,9 +6,7 @@ namespace BlazorWebshop.Services
 {
     public class CategoryService : ICategoryService
     {
-
         private readonly IDbContextFactory<ApplicationDbContext> _contextFactory;
-
         public CategoryService(IDbContextFactory<ApplicationDbContext> contextFactory)
         {
             _contextFactory = contextFactory;
@@ -48,9 +46,13 @@ namespace BlazorWebshop.Services
 
         public async Task<Category> GetCategoryByIdAsync(int id)
         {
-            await using var _context = _contextFactory.CreateDbContext();
-            var category = await _context.Categories.FindAsync(id);
             // not having a catg is not handled yet 
+            await using var _context = _contextFactory.CreateDbContext();
+            //var category = await _context.Categories.FindAsync(id); (Dit omgezet in onderstaande vanwege issue met producten laden anders)
+
+            var category = await _context.Categories
+                             .Include(c => c.Products)
+                             .FirstOrDefaultAsync(c => c.Id == id);
             return category;
         }
 
@@ -71,6 +73,15 @@ namespace BlazorWebshop.Services
         {
             await using var _context = _contextFactory.CreateDbContext();
             return await _context.Categories.AnyAsync(c => c.Name == categoryName && (categoryId == null || c.Id != categoryId));
+        }
+
+        public bool DoesCategoryHaveProducts(Category category)
+        {
+            if (category?.Products == null || !category.Products.Any())
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

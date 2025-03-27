@@ -3,6 +3,8 @@
 @inject NavigationManager NavigationManager
 @inject ICategoryService CategoryService
 @inject CategoryStateService CategoryState
+@inject CartStateService CartState
+@inject ILocalStorageService LocalStorage
 @rendermode @(new InteractiveServerRenderMode(prerender: false)) 
 
 <head>
@@ -96,8 +98,9 @@
                     </NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="ShoppingCart">
+                    <NavLink class="nav-link" href="shopping-cart">
                         <i class="bi bi-cart2 h2"></i>
+                        <span class="badge badge-pill badge-light">@productCount</span>
                     </NavLink>
                 </li>
             </ul>
@@ -108,11 +111,15 @@
 @code {
     private string? currentUrl;
 
+    private int productCount = 0;
+
     List<Category> categories = new List<Category>();
 
     protected override async Task OnInitializedAsync()
     {
         SyncInitialization();
+        await LoadProductCount();
+        CartState.OnChange += async () => await LoadProductCount();
 
         try
         {
@@ -124,11 +131,6 @@
             Console.WriteLine($"NavMenu OnInitializedAsync Error: {ex.Message}");
         }
     }
-
-    // public void Dispose()
-    // {
-    //     CategoryState.OnChange -= StateHasChanged;
-    // }
 
     private async void UpdateCategories()
     {
@@ -145,10 +147,10 @@
         NavigationManager.LocationChanged += OnLocationChanged;
     }
 
-     protected override async void OnAfterRender(bool FirstRender)
-     {
-         var categories = await CategoryService.GetAllCategoriesAsync();
-     }
+    protected override async void OnAfterRender(bool FirstRender)
+    {
+        var categories = await CategoryService.GetAllCategoriesAsync();
+    }
 
     private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
     {
@@ -158,10 +160,9 @@
 
     public void Dispose()
     {
-        // CategoryState.OnChange -= StateHasChanged;
         CategoryState.OnChange -= UpdateCategories;
-
         NavigationManager.LocationChanged -= OnLocationChanged;
+        CartState.OnChange -= async () => await LoadProductCount();
     }
 
     private bool collapseNavMenu = true;
@@ -172,4 +173,30 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    private async Task LoadProductCount()
+    {
+        // var cart = await LocalStorage.GetItemAsync<List<CartItem>>("cart");
+        // productCount = cart != null ? cart.Count : 0;
+        // StateHasChanged();
+
+        // ANDERS UITREKENEN
+        var cartItems = await CartState.GetCartItemsAsync();
+        int totalQuantity = 0;
+
+        foreach (var item in cartItems)
+        {
+            totalQuantity += item.Quantity;
+        }
+
+        productCount =  totalQuantity;
+        StateHasChanged();
+    }
+
+    // private int GetProductCount()
+    // {
+    //     var cart = LocalStorage.GetItemAsync<List<CartItem>>("cart");
+    //     return cart != null ? cart.Count : 0;
+    // }
+
 }

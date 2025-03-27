@@ -1,4 +1,6 @@
-﻿namespace BlazorWebshop.Models.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace BlazorWebshop.Models.Entities
 {
     public class Category
     {
@@ -8,6 +10,7 @@
 
         public string? Description { get; set; }
 
+        [JsonIgnore]
         public ICollection<Product> Products { get; set; }
     }
 }

@@ -8,11 +8,18 @@ C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\BlazorW
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\BlazorWebshop.pdb
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Blazored.Toast.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Humanizer.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -36,6 +43,7 @@ C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microso
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.JSInterop.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\JipVe\source\repos\BlazorWebshop\BlazorWebshop\bin\Debug\net8.0\Mono.TextTemplating.dll

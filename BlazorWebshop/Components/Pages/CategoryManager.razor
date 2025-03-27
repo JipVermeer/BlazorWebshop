@@ -5,8 +5,11 @@
 @inject ICategoryService CategoryService
 @inject CategoryStateService CategoryState
 @inject NavigationManager NavigationManager
+@inject IToastService ToastService
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 @attribute [Authorize(Roles = "admin")]
+
+<BlazoredToasts />
 
 <PageTitle>Categorieën</PageTitle>
 <h3>Categorieën</h3>
@@ -44,6 +47,7 @@ else
 
 @code {
     List<Category> categories = new List<Category>();
+    Category category;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -55,12 +59,40 @@ else
         NavigationManager.NavigateTo($"/edit-category/{id}");
     }
 
+    // NOG DEBUGGEN HIER 
+    // async Task DeleteCategory(int id)
+    // {
+    //     category = await CategoryService.GetCategoryByIdAsync(id);
+
+    //     if (CategoryService.DoesCategoryHaveProducts(category))
+    //     {
+    //         await CategoryService.DeleteCategoryAsync(id);
+    //         categories = await CategoryService.GetAllCategoriesAsync();
+
+    //         CategoryState.NotifyStateChanged();
+    //     } else
+    //     {
+    //         ToastService.ShowError($"{category.Name} bevat nog producten en kan niet worden verwijderd.");
+    //     }
+    // }
+
     async Task DeleteCategory(int id)
     {
-        await CategoryService.DeleteCategoryAsync(id);
-        categories = await CategoryService.GetAllCategoriesAsync();
+        category = await CategoryService.GetCategoryByIdAsync(id);
 
-        CategoryState.NotifyStateChanged();
+        if (CategoryService.DoesCategoryHaveProducts(category))
+        {
+            ToastService.ShowError($"{category.Name} bevat nog producten en kan niet worden verwijderd.");
+        }
+        else
+        {
+            await CategoryService.DeleteCategoryAsync(id);
+            categories = await CategoryService.GetAllCategoriesAsync();
+
+            CategoryState.NotifyStateChanged();
+
+            ToastService.ShowSuccess($"{category.Name} is verwijderd.");
+        }
     }
 
     void AddCategory()

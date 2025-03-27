@@ -1,3 +1,5 @@
+using Blazored.LocalStorage;
+using Blazored.Toast;
 using BlazorWebshop.Components;
 using BlazorWebshop.Components.Account;
 using BlazorWebshop.Data;
@@ -52,11 +54,16 @@ namespace BlazorWebshop
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddBlazoredToast();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IProductService, ProductService>();
-
-            //try
             builder.Services.AddSingleton<CategoryStateService>();
+            builder.Services.AddScoped<CartStateService>();
+            //builder.Services.AddSingleton<CartStateService>();
+            //builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
+
+
 
             builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()

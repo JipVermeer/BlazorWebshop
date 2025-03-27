@@ -51,7 +51,7 @@ else
         <InputText id="price" @bind-Value="PriceString" class="form-control" />
     </div>
     <div>
-        <label for="stock">Stock</label>
+        <label for="stock">Voorraad</label>
         <InputNumber id="stock" @bind-Value="CurrentProduct.Stock" class="form-control" />
     </div>
     <div class="mb-3 text-center">
@@ -105,30 +105,30 @@ else
             errorMessage = "De productnaam mag niet leeg zijn.";
             await ResetProduct();
         }
+        else if (string.IsNullOrWhiteSpace(CurrentProduct.Description))
+        {
+            errorMessage = "De omschrijving mag niet leeg zijn.";
+            await ResetProduct();
+        }
         else if (await ProductService.ProductExists(CurrentProduct.Name, Id))
         {
             errorMessage = "Dit product bestaat al.";
             await ResetProduct();
-        } // else if (CurrentProduct.Price <= 0)
-          // {
-          //     errorMessage = "De prijs moet hoger dan €0 zijn.";
-          // }
+        } 
         else if (!await PriceIsValid(PriceString))
         {
             errorMessage = "De prijs moet een valide getal groter dan 0 zijn.";
-        } else if (CurrentProduct.Stock < 1)
-        {
-            errorMessage = "De voorraad moet minstens 1 zijn.";
+        } // else if (CurrentProduct.Stock < 1)
+        // {
+        //     errorMessage = "De voorraad moet minstens 1 zijn.";
 
-        }
+        // }
         else if (CurrentProduct.CategoryId < 1)
         {
             errorMessage = "Selecteer een categorie.";
         }
         else
         {
-            Console.WriteLine("Form is valid, submitting.");
-            Console.WriteLine(CurrentProduct.CategoryId);
             if (Id is not null)
             {
                 // Update

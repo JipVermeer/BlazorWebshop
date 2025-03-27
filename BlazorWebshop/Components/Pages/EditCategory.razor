@@ -21,7 +21,7 @@ else
 
 <EditForm Model="CurrentCategory" OnSubmit="HandleSubmit">
     <div>
-        <label for="name">Name</label>
+        <label for="name">Naam</label>
         <InputText id="name" @bind-Value="CurrentCategory.Name" class="form-control" />
     </div>
     <div>
@@ -79,6 +79,7 @@ else
             else
             {
                 // Add
+                Console.WriteLine("WE KOMEN WEL HIER");
                 await CategoryService.AddCategoryAsync(CurrentCategory);
                 NavigationManager.NavigateTo("/categories", true);
             }

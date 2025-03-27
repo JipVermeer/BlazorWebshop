@@ -32,7 +32,9 @@ namespace BlazorWebshop.Services
         public async Task<Product> GetProductByIdAsync(int id)
         {
             await using var _context = _contextFactory.CreateDbContext();
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products
+             .Include(p => p.Category)
+             .FirstOrDefaultAsync(p => p.Id == id);
             return product;
         }
 
@@ -64,6 +66,7 @@ namespace BlazorWebshop.Services
                 dbProduct.Description = product.Description;
                 dbProduct.Price = product.Price;
                 dbProduct.CategoryId = product.CategoryId;
+                dbProduct.Stock = product.Stock;
 
                 await _context.SaveChangesAsync();
             }
@@ -73,6 +76,36 @@ namespace BlazorWebshop.Services
         {
             await using var _context = _contextFactory.CreateDbContext();
             return await _context.Products.AnyAsync(p => p.Name == productName && (productId == null || p.Id != productId));
+        }
+
+        public async Task<bool> DecreaseStockAsync(int productId)
+        {
+            await using var _context = _contextFactory.CreateDbContext();
+            var product = await _context.Products.FindAsync(productId);
+
+            if (product == null || product.Stock <= 0)
+            {
+                return false; // Voor de zekerheid
+            }
+
+            product.Stock--;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> IncreaseStockAsync(int productId)
+        {
+            await using var _context = _contextFactory.CreateDbContext();
+            var product = await _context.Products.FindAsync(productId);
+
+            if (product == null)
+            {
+                return false; // Voor de zekerheid
+            }
+
+            product.Stock++;
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

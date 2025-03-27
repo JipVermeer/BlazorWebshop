@@ -3,7 +3,12 @@
 @using BlazorWebshop.Services
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
+@inject ILocalStorageService LocalStorage 
+@inject IToastService ToastService
+@inject CartStateService CartState
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+<BlazoredToasts />
 
  <h3>@categoryName</h3> 
 
@@ -13,7 +18,7 @@
                 <thead>
                     <tr>
                         <th>Naam</th>
-                        <th>Beschrijving (optioneel)</th>
+                        <th>Beschrijving</th>
                         <th>Prijs</th>
                         <th>Voorraad</th>
                         <th></th>
@@ -29,7 +34,15 @@
                             <td>@product.Price</td>
                             <td>@product.Stock</td>
                             <td>Wishlist</td>
-                            <td>Cart</td>
+
+                    @if (product.Stock > 0)
+                    {
+                        <td><button @onclick="() => AddToCart(product.Id)">Add to Cart</button></td>
+                    } else
+                    {
+                        <td><button>Geen voorraad</button></td>
+                    }
+
                         </tr>
                     }
                 </tbody>
@@ -47,13 +60,57 @@ else
     public Category Category { get; set; }
     public string categoryName;
 
-     public List<Product> Products { get; set; }
+    public List<Product> Products { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-            Category = await CategoryService.GetCategoryByIdAsync(categoryId);
-            categoryName = Category.Name;
+        Category = await CategoryService.GetCategoryByIdAsync(categoryId);
+        categoryName = Category.Name;
 
-            Products = await ProductService.GetProductsByCategoryAsync(categoryId);
+        Products = await ProductService.GetProductsByCategoryAsync(categoryId);
+    }
+
+    private async Task AddToCart(int productId)
+    {
+        // var cart = await LocalStorage.GetItemAsync<List<CartItem>>("cart");
+
+        var product = await ProductService.GetProductByIdAsync(productId);
+
+        var cart = await LocalStorage.GetItemAsync<List<CartItem>>("cart") ?? new List<CartItem>();
+        int newId = cart.Any() ? cart.Max(c => c.Id) + 1 : 1; // Unieke id genereren 
+
+        var cartItem = new CartItem
+            {
+                Id = newId,
+                ProductId = productId,
+                Product = product,
+                Quantity = 1
+            };
+
+        await CartState.AddToCart(cartItem);
+
+        await ProductService.DecreaseStockAsync(product.Id);
+
+        // Updaten nieuwe status 
+        Products = await ProductService.GetProductsByCategoryAsync(categoryId);
+        StateHasChanged();
+
+        ToastService.ShowSuccess($"{product.Name} toegevoegd aan winkelwagen.");
+
+        // if(cart == null)
+        // {
+        //     cart = new List<CartItem>();
+        // }
+
+        // var cartItem = new CartItem();
+        // cartItem.ProductId = productId;
+        // cartItem.Product = await ProductService.GetProductByIdAsync(productId);
+        // cartItem.Quantity = 1;
+
+        // cart.Add(cartItem);
+        // await LocalStorage.SetItemAsync("cart", cart);
+        // ToastService.ShowSuccess(cartItem.Product.Name + " toegevoegd aan winkelwagen.");
+
+        // await ShoppingCartService.AddToCartAsync(productId);
     }
 }

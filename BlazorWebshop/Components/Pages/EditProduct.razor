@@ -7,6 +7,7 @@
 @using System.Text.RegularExpressions
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
+@inject NotificationService NotificationService
 @inject NavigationManager NavigationManager
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 @attribute [Authorize(Roles = "admin")]
@@ -139,6 +140,10 @@ else
             {
                 // Add
                 await ProductService.AddProductAsync(CurrentProduct);
+
+                Console.WriteLine("ADDPRODUCT REACHED");
+                NotificationService.SetNotification("Product toegevoegd!", ToastLevel.Success);
+
                 NavigationManager.NavigateTo("/products", true);
             }
         }

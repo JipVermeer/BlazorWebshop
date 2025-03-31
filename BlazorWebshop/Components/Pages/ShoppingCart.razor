@@ -31,12 +31,15 @@ else
         <tbody>
             @foreach (var item in cartItems)
             {
-                <tr>
-                    <td>@item.Product.Name</td>
-                    <td>@item.Product.Price</td>
-                    <td>@item.Quantity</td>
-                    <td><button @onclick="() => RemoveFromCart(item)">Verwijderen</button></td>
-                </tr>
+                @if (ProductService.GetProductByIdAsync(item.ProductId) != null)         
+                {
+                    <tr>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Product.Price</td>
+                        <td>@item.Quantity</td>
+                        <td><button @onclick="() => RemoveFromCart(item)">Verwijderen</button></td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
@@ -49,11 +52,31 @@ else
     private List<CartItem> cartItems = new();
     private bool isInitialized = false; // Om meerdere calls te voorkomen (Js interop error)
 
+    // Zorg dat je straks bij bestellen nog een keer checkt of product nog bestaat
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             cartItems = await CartService.GetCartItemsAsync();
+
+            // Zoek cartitems, check of product bestaat
+            var validCartItems = new List<CartItem>();
+            foreach (var item in cartItems)
+            {
+                var product = await ProductService.GetProductByIdAsync(item.ProductId);
+                if (product != null)
+                {
+                    validCartItems.Add(item);
+                }
+                else
+                {
+                    // Verwijder helemaal als niet bestaat
+                    await CartService.RemoveFromCartAsync(item);
+                }
+            }
+
+            cartItems = validCartItems;
+
             isInitialized = true;
             StateHasChanged(); 
         }

@@ -37,7 +37,7 @@
 
                     @if (product.Stock > 0)
                     {
-                        <td><button @onclick="() => AddToCart(product.Id)">Add to Cart</button></td>
+                        <td><button @onclick="() => AddToCart(product.Id)">Toevoegen</button></td>
                     } else
                     {
                         <td><button>Geen voorraad</button></td>
@@ -94,6 +94,8 @@ else
         // Updaten nieuwe status 
         Products = await ProductService.GetProductsByCategoryAsync(categoryId);
         StateHasChanged();
+
+        // ToastService.SetToast("Product added successfully!", ToastLevel.Success);
 
         ToastService.ShowSuccess($"{product.Name} toegevoegd aan winkelwagen.");
 

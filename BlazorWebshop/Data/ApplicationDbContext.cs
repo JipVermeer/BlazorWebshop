@@ -32,7 +32,8 @@ namespace BlazorWebshop.Data
             modelBuilder.Entity<CartItem>()
                 .HasOne(c => c.Product)
                 .WithMany()
-                .HasForeignKey(c => c.ProductId);
+                .HasForeignKey(c => c.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

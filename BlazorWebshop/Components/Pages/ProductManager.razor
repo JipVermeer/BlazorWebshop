@@ -5,8 +5,11 @@
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
 @inject NavigationManager NavigationManager
+@inject NotificationService NotificationService
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 @attribute [Authorize(Roles = "admin")]
+
+<BlazoredToasts/>
 
 <PageTitle>Producten</PageTitle>
 <h3 class="mb-3">Producten</h3>
@@ -64,6 +67,19 @@ else
 
 @code {
     List<Category> products = new List<Category>();
+
+    // protected override void OnInitialized()
+    // {
+    //     NotificationService.ShowNotification();
+    // }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await NotificationService.ShowNotification();
+        }
+    }
 
     protected override async Task OnParametersSetAsync()
     {

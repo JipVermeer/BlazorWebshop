@@ -119,14 +119,13 @@ else
         else if (!await PriceIsValid(PriceString))
         {
             errorMessage = "De prijs moet een valide getal groter dan 0 zijn.";
-        } // else if (CurrentProduct.Stock < 1)
-        // {
-        //     errorMessage = "De voorraad moet minstens 1 zijn.";
-
-        // }
+        } 
         else if (CurrentProduct.CategoryId < 1)
         {
             errorMessage = "Selecteer een categorie.";
+        } else if (CurrentProduct.Stock < 0)
+        {
+            errorMessage = "De stock moet minimaal 0 zijn.";
         }
         else
         {
@@ -142,7 +141,8 @@ else
                 await ProductService.AddProductAsync(CurrentProduct);
 
                 Console.WriteLine("ADDPRODUCT REACHED");
-                NotificationService.SetNotification("Product toegevoegd!", ToastLevel.Success);
+
+                await NotificationService.SetNotification("Product toegevoegd!", ToastLevel.Success);
 
                 NavigationManager.NavigateTo("/products", true);
             }

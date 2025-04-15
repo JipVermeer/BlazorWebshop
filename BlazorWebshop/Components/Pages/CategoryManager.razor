@@ -59,23 +59,6 @@ else
         NavigationManager.NavigateTo($"/edit-category/{id}");
     }
 
-    // NOG DEBUGGEN HIER 
-    // async Task DeleteCategory(int id)
-    // {
-    //     category = await CategoryService.GetCategoryByIdAsync(id);
-
-    //     if (CategoryService.DoesCategoryHaveProducts(category))
-    //     {
-    //         await CategoryService.DeleteCategoryAsync(id);
-    //         categories = await CategoryService.GetAllCategoriesAsync();
-
-    //         CategoryState.NotifyStateChanged();
-    //     } else
-    //     {
-    //         ToastService.ShowError($"{category.Name} bevat nog producten en kan niet worden verwijderd.");
-    //     }
-    // }
-
     async Task DeleteCategory(int id)
     {
         category = await CategoryService.GetCategoryByIdAsync(id);

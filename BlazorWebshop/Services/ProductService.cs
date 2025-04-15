@@ -78,34 +78,34 @@ namespace BlazorWebshop.Services
             return await _context.Products.AnyAsync(p => p.Name == productName && (productId == null || p.Id != productId));
         }
 
-        public async Task<bool> DecreaseStockAsync(int productId)
-        {
-            await using var _context = _contextFactory.CreateDbContext();
-            var product = await _context.Products.FindAsync(productId);
+        //public async Task<bool> DecreaseStockAsync(int productId)
+        //{
+        //    await using var _context = _contextFactory.CreateDbContext();
+        //    var product = await _context.Products.FindAsync(productId);
 
-            if (product == null || product.Stock <= 0)
-            {
-                return false; // Voor de zekerheid
-            }
+        //    if (product == null || product.Stock <= 0)
+        //    {
+        //        return false; // Voor de zekerheid
+        //    }
 
-            product.Stock--;
-            await _context.SaveChangesAsync();
-            return true;
-        }
+        //    product.Stock--;
+        //    await _context.SaveChangesAsync();
+        //    return true;
+        //}
 
-        public async Task<bool> IncreaseStockAsync(int productId)
-        {
-            await using var _context = _contextFactory.CreateDbContext();
-            var product = await _context.Products.FindAsync(productId);
+        //public async Task<bool> IncreaseStockAsync(int productId)
+        //{
+        //    await using var _context = _contextFactory.CreateDbContext();
+        //    var product = await _context.Products.FindAsync(productId);
 
-            if (product == null)
-            {
-                return false; // Voor de zekerheid
-            }
+        //    if (product == null)
+        //    {
+        //        return false; // Voor de zekerheid
+        //    }
 
-            product.Stock++;
-            await _context.SaveChangesAsync();
-            return true;
-        }
+        //    product.Stock++;
+        //    await _context.SaveChangesAsync();
+        //    return true;
+        //}
     }
 }

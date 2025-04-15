@@ -10,7 +10,8 @@ namespace BlazorWebshop.Models.Entities
 
         public string? Description { get; set; }
 
-        [JsonIgnore]
+        // Navigation Property
+        [JsonIgnore] // Vanwege Js interop error 
         public ICollection<Product> Products { get; set; }
     }
 }

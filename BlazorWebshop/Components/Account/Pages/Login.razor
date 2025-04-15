@@ -1,6 +1,7 @@
 ﻿@page "/Account/Login"
 
 @using System.ComponentModel.DataAnnotations
+@using BlazorWebshop.Models.Entities
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Identity
 @using BlazorWebshop.Data
@@ -9,6 +10,8 @@
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
+@* @inject IShoppingCartService UserCartService
+@inject LocalCartService GuestCartService *@
 
 <PageTitle>Log in</PageTitle>
 
@@ -93,7 +96,8 @@
         if (result.Succeeded)
         {
             Logger.LogInformation("User logged in.");
-            RedirectManager.RedirectTo(ReturnUrl);
+            // Changed this to homepage instead of returnUrl because of mergecarts issue 
+            RedirectManager.RedirectTo("/");
         }
         else if (result.RequiresTwoFactor)
         {
@@ -125,4 +129,4 @@
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
-}
+}  

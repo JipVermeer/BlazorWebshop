@@ -1,10 +1,13 @@
 ﻿@using BlazorWebshop.Models.Entities
 @using BlazorWebshop.Services
+@using System.Security.Claims
 @inject NavigationManager NavigationManager
-@inject ICategoryService CategoryService
 @inject CategoryStateService CategoryState
-@inject CartStateService CartState
+@inject LocalCartService CartState
+@inject ICategoryService CategoryService
 @inject ILocalStorageService LocalStorage
+@inject IShoppingCartService UserCartService
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @rendermode @(new InteractiveServerRenderMode(prerender: false)) 
 
 <head>
@@ -45,12 +48,12 @@
                 <AuthorizeView Roles="admin">
                 <li class="nav-item">
                     <NavLink class="nav-link" href="categories">
-                    Categorieënbeheer @* <i class="fa-regular fa-user"></i> *@
+                    Categorieënbeheer 
                     </NavLink>
                  </li>
                     <li class="nav-item">
                         <NavLink class="nav-link" href="products">
-                            Productenbeheer @* <i class="fa-regular fa-user"></i> *@
+                            Productenbeheer 
                         </NavLink>
                     </li>
             </AuthorizeView>
@@ -105,17 +108,17 @@
 
 @code {
     private string? currentUrl;
-
     private int productCount = 0;
-
+    private bool authenticated;
+    private string userId;
     List<Category> categories = new List<Category>();
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         SyncInitialization();
-        await LoadProductCount();
-        CartState.OnChange += async () => await LoadProductCount();
-
         try
         {
             categories = await CategoryService.GetAllCategoriesAsync();
@@ -124,6 +127,28 @@
         catch (Exception ex)
         {
             Console.WriteLine($"NavMenu OnInitializedAsync Error: {ex.Message}");
+        }
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        authenticated = user.Identity?.IsAuthenticated ?? false;
+
+        if (authenticated)
+        {
+            userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        }
+
+        await LoadProductCount();
+        CartState.OnChange += async () => await LoadProductCount();
+        UserCartService.OnChange += async () => await LoadProductCount();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await LoadProductCount();
+            StateHasChanged();
         }
     }
 
@@ -142,11 +167,6 @@
         NavigationManager.LocationChanged += OnLocationChanged;
     }
 
-    protected override async void OnAfterRender(bool FirstRender)
-    {
-        var categories = await CategoryService.GetAllCategoriesAsync();
-    }
-
     private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
     {
         currentUrl = NavigationManager.ToBaseRelativePath(e.Location);
@@ -158,6 +178,7 @@
         CategoryState.OnChange -= UpdateCategories;
         NavigationManager.LocationChanged -= OnLocationChanged;
         CartState.OnChange -= async () => await LoadProductCount();
+        UserCartService.OnChange -= async () => await LoadProductCount();
     }
 
     private bool collapseNavMenu = true;
@@ -171,27 +192,26 @@
 
     private async Task LoadProductCount()
     {
-        // var cart = await LocalStorage.GetItemAsync<List<CartItem>>("cart");
-        // productCount = cart != null ? cart.Count : 0;
-        // StateHasChanged();
-
-        // ANDERS UITREKENEN
-        var cartItems = await CartState.GetCartItemsAsync();
-        int totalQuantity = 0;
-
-        foreach (var item in cartItems)
+        if(authenticated)
         {
-            totalQuantity += item.Quantity;
-        }
+            productCount = await UserCartService.GetShoppingCartCountAsync(userId);
+        } else
+        {
+            var cartItems = await CartState.GetCartItemsAsync();
+            int totalQuantity = 0;
 
-        productCount =  totalQuantity;
+            foreach (var item in cartItems)
+            {
+                totalQuantity += item.Quantity;
+            }
+
+            productCount = totalQuantity;
+        }
+        Console.WriteLine("---------------------------------------");
+        Console.WriteLine("LoadProductCount in NavMenu:" + productCount);
+        Console.WriteLine("---------------------------------------");
+
         StateHasChanged();
     }
+} 
 
-    // private int GetProductCount()
-    // {
-    //     var cart = LocalStorage.GetItemAsync<List<CartItem>>("cart");
-    //     return cart != null ? cart.Count : 0;
-    // }
-
-}

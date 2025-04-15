@@ -5,6 +5,7 @@
 @using BlazorWebshop.Services
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
+@using System.Security.Claims
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> SignInManager
 @inject NavigationManager NavigationManager
@@ -12,6 +13,8 @@
 @inject IdentityRedirectManager RedirectManager
 @inject ICategoryService CategoryService
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IShoppingCartService UserCartService
+@inject LocalCartService GuestCartService
 @rendermode @(new InteractiveServerRenderMode(prerender: false)) 
 
 <PageTitle>Home</PageTitle>
@@ -44,6 +47,8 @@ else
 
 @code {
     private string? firstName;
+    private string userId;
+    private bool authenticated;
     List<Category> categories = new List<Category>();
 
     [CascadingParameter]
@@ -54,22 +59,39 @@ else
         var authState = await authenticationStateTask;
         var user = authState.User;
 
-        if (user.Identity?.IsAuthenticated == true)
+        authenticated = user.Identity?.IsAuthenticated ?? false;
+
+        if (authenticated)
         {
+            userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var applicationUser = await UserManager.GetUserAsync(user);
 
             if (applicationUser != null)
             {
                 firstName = applicationUser.FirstName;
             }
-        }
-        else
+        } else
         {
             firstName = "gast";
         }
 
-
         categories = await CategoryService.GetAllCategoriesAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+           if (userId != null)
+           {
+               List<CartItem> LocalCartItems = await GuestCartService.GetCartItemsAsync();
+               if (LocalCartItems.Count > 0)
+               {
+                   await UserCartService.MergeCarts(LocalCartItems, userId);
+                   await GuestCartService.EmptyCart();
+               }
+           }
+        }
     }
 
     private void GoToProducts(int categoryId)

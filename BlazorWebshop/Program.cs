@@ -58,8 +58,9 @@ namespace BlazorWebshop
             builder.Services.AddBlazoredToast();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
             builder.Services.AddSingleton<CategoryStateService>();
-            builder.Services.AddScoped<CartStateService>();
+            builder.Services.AddScoped<LocalCartService>();
 
             builder.Services.AddScoped<NotificationService>();
             //builder.Services.AddSingleton<CartStateService>();

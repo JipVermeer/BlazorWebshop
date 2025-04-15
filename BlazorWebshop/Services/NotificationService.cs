@@ -78,15 +78,18 @@ namespace BlazorWebshop.Services
 
             if (!string.IsNullOrEmpty(Message))
             {
-                Console.WriteLine($"IN SHOWNOTIFICATION - MESSAGE: {Message}, LEVEL: {Level}");
                 _toastService.ShowToast(Level, Message);
 
                 // Maak sessionstorage weer leeg
                 await _jsRuntime.InvokeVoidAsync("sessionStorage.removeItem", "notification_message");
                 await _jsRuntime.InvokeVoidAsync("sessionStorage.removeItem", "notification_level");
+
+                var messageCheck = await _jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "notification_message");
+                var levelCheck = await _jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "notification_level");
+                storedMessage = null;
+                storedLevel = null;
+                Message = null;
             }
-
-
         }
     }
 }

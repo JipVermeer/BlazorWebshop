@@ -1,6 +1,12 @@
 ﻿@using BlazorWebshop.Models.Entities
 @using BlazorWebshop.Services
+@using System.Security.Claims
 @inherits LayoutComponentBase
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@* @inject IJSRuntime JSRuntime
+@inject LocalCartService GuestCartService
+@inject IShoppingCartService UserCartService *@
 
  <NavMenu />
 <Notifications />
@@ -15,3 +21,35 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+@* @code {
+    private bool _cartMerged = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("------------------------------------");
+        Console.WriteLine("Onafterrenderasync in mainlayout accessed");
+        Console.WriteLine("------------------------------------");
+        if (!_cartMerged)
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            if (user.Identity?.IsAuthenticated == true)
+            {
+                _cartMerged = true;
+
+                string userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId != null)
+                {
+                    List<CartItem> LocalCartItems = await GuestCartService.GetCartItemsAsync();
+                    if (LocalCartItems.Count > 0)
+                    {
+                        await UserCartService.MergeCarts(LocalCartItems, userId);
+                        await GuestCartService.EmptyCart();
+                    }
+                }
+            }
+        }
+    }
+} *@

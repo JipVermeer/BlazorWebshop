@@ -1,11 +1,14 @@
 ﻿@page "/categoryProducts/{categoryId:int}"
 @using BlazorWebshop.Models.Entities
 @using BlazorWebshop.Services
+@using System.Security.Claims
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
 @inject ILocalStorageService LocalStorage 
 @inject IToastService ToastService
-@inject CartStateService CartState
+@inject IShoppingCartService UserCartService
+@inject LocalCartService CartState
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 <BlazoredToasts />
@@ -57,10 +60,16 @@ else
     [Parameter] 
     public int categoryId { get; set; }
 
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
     public Category Category { get; set; }
     public string categoryName;
 
     public List<Product> Products { get; set; }
+
+    private bool authenticated;
+    private string userId;
 
     protected override async Task OnInitializedAsync()
     {
@@ -68,51 +77,67 @@ else
         categoryName = Category.Name;
 
         Products = await ProductService.GetProductsByCategoryAsync(categoryId);
+
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        authenticated = user.Identity?.IsAuthenticated ?? false;
+
+        if (authenticated)
+        {
+            userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        }
     }
 
     private async Task AddToCart(int productId)
     {
-        // var cart = await LocalStorage.GetItemAsync<List<CartItem>>("cart");
+        Product product = await ProductService.GetProductByIdAsync(productId);
+        List<CartItem> cart;
 
-        var product = await ProductService.GetProductByIdAsync(productId);
+        if (authenticated)
+        {
+            ShoppingCart shop_cart = await UserCartService.GetUserShoppingCartAsync(userId);
+            cart = shop_cart.CartItems;
+        } else
+        {
+            cart = await CartState.GetCartItemsAsync();
+        }
 
-        var cart = await LocalStorage.GetItemAsync<List<CartItem>>("cart") ?? new List<CartItem>();
-        int newId = cart.Any() ? cart.Max(c => c.Id) + 1 : 1; // Unieke id genereren 
+        CartItem cartItem = cart.FirstOrDefault(item => item.ProductId == productId);
 
-        var cartItem = new CartItem
+        if (cartItem != null && cartItem.Quantity >= product.Stock) 
+        {
+            ToastService.ShowError("Maximale hoeveelheid van dit product zit al in je winkelwagen.");
+        } else
+        {
+           int newId = cart.Any() ? cart.Max(c => c.Id) + 1 : 1; // Unieke id genereren
+
+            if (authenticated)
             {
-                Id = newId,
-                ProductId = productId,
-                Product = product,
-                Quantity = 1
-            };
+                CartItem item = new CartItem
+                    {
+                        ProductId = productId,
+                        Quantity = 1
+                    };
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("Adding to user cart");
+                Console.WriteLine("------------------------------------");
+                await UserCartService.AddCartItemToUserCart(userId, item);
+            }
+            else
+            {
+                CartItem item = new CartItem
+                    {
+                        Id = newId,
+                        ProductId = productId,
+                        Product = product,
+                        Quantity = 1
+                    };
+                await CartState.AddToCart(item);
 
-        await CartState.AddToCart(cartItem);
+            }
 
-        await ProductService.DecreaseStockAsync(product.Id);
-
-        // Updaten nieuwe status 
-        Products = await ProductService.GetProductsByCategoryAsync(categoryId);
-        StateHasChanged();
-
-        // ToastService.SetToast("Product added successfully!", ToastLevel.Success);
-
-        ToastService.ShowSuccess($"{product.Name} toegevoegd aan winkelwagen.");
-
-        // if(cart == null)
-        // {
-        //     cart = new List<CartItem>();
-        // }
-
-        // var cartItem = new CartItem();
-        // cartItem.ProductId = productId;
-        // cartItem.Product = await ProductService.GetProductByIdAsync(productId);
-        // cartItem.Quantity = 1;
-
-        // cart.Add(cartItem);
-        // await LocalStorage.SetItemAsync("cart", cart);
-        // ToastService.ShowSuccess(cartItem.Product.Name + " toegevoegd aan winkelwagen.");
-
-        // await ShoppingCartService.AddToCartAsync(productId);
+            ToastService.ShowSuccess($"{product.Name} toegevoegd aan winkelwagen.");
+        }
     }
 }

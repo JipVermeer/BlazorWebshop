@@ -10,7 +10,7 @@ namespace BlazorWebshop.Services
         Task DeleteProductAsync(int id);
         Task UpdateProductAsync(Product product, int id);
         Task<bool> ProductExists(string productName, int? id);
-        Task<bool> DecreaseStockAsync(int productId);
-        Task<bool> IncreaseStockAsync(int productId);
+        //Task<bool> DecreaseStockAsync(int productId);
+        //Task<bool> IncreaseStockAsync(int productId);
     }
 }

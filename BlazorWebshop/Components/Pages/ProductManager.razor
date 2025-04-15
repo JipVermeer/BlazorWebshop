@@ -67,6 +67,7 @@ else
 
 @code {
     List<Category> products = new List<Category>();
+    private bool notificationShown = false;
 
     // protected override void OnInitialized()
     // {
@@ -75,8 +76,9 @@ else
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (firstRender && !notificationShown)
         {
+            notificationShown = true;
             await NotificationService.ShowNotification();
         }
     }

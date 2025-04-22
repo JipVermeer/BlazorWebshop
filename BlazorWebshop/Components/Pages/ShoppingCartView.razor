@@ -6,7 +6,9 @@
 @inject IShoppingCartService UserCartService 
 @inject IProductService ProductService
 @inject IToastService ToastService
+@inject NotificationService NotificationService
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 <BlazoredToasts />
@@ -55,19 +57,18 @@ else
 
 @* <h4>Verzendkosten: </h4> *@
 <h4>Totaalprijs: @totalPrice </h4>
+<button @onclick="() => PlaceOrder()">Bestellen</button>
 
 @code {
-    // NIEUW PLAN: localstorage product koppeling laten, update maar steeds gewoon
-    // Stock pas aanpassen bij winkelmandje bestellen, niet bij toevoegen, schrijf maar bij winkelmandje let op ofzo
-
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
 
     private List<CartItem> cartItems = new();
-    private bool isInitialized = false; // Om meerdere calls te voorkomen (Js interop error)
+    //private bool isInitialized = false; // Om meerdere calls te voorkomen (Js interop error)
     private bool authenticated;
     private string userId;
     decimal totalPrice = 0;
+    private bool notificationShown = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -91,81 +92,71 @@ else
     {
         if (firstRender)
         {
-            if (authenticated)
+            if (!notificationShown)
             {
-                // dit moet je eigenlijk skippen denk ik = overbodig
-                ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
-                cartItems = cart.CartItems;
-            } else
-            {
-                cartItems = await CartService.GetCartItemsAsync();
+                notificationShown = true;
+                await NotificationService.ShowNotification();
             }
 
-            // Zoek cartitems, check of product bestaat
-            // vgm bij authenticated kan dit in oninitialized maar dit leek me ff makkelijker 
-            var validCartItems = new List<CartItem>();
-            foreach (var item in cartItems)
-            {
-                var product = await ProductService.GetProductByIdAsync(item.ProductId);
-                if (product != null)
-                {
-                    item.Product = product;
-                    validCartItems.Add(item);
-                }
-                else
-                {
-                    if (authenticated)
-                    {
-                        await UserCartService.RemoveCartItemFromUserCart(userId, item);
-                    } else
-                    {
-                        await CartService.RemoveFromCartAsync(item);
-                    }
-                    // Verwijder helemaal als niet bestaat
-
-                }
-            }
-            cartItems = validCartItems;
-            totalPrice = await GetTotalPrice(userId);
-
-            isInitialized = true;
-            StateHasChanged();
-
-            Console.WriteLine("---------------------------");
-            Console.WriteLine("FIRSTRENDER");
-            Console.WriteLine("---------------------------");
+            await LoadCart();
+            // isInitialized = true;
+            StateHasChanged(); // Kan weg als isinitialized weg is, doe je ook al in loadcart 
         }
     }
 
     private async Task LoadCart()
     {
-        // await CartService.SyncCartStockAsync(ProductService);
         if (authenticated)
         {
             ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
             cartItems = cart.CartItems;
-            // Slechte oplossing voor product niet gevonden probleem, niet bepaald netjes maar ik heb haast 
-            Console.WriteLine("---------------------------");
-            Console.WriteLine("LOADCART AUTHENTICATED");
-            Console.WriteLine("---------------------------");
-            foreach (var item in cartItems)
-            {
-                item.Product = await ProductService.GetProductByIdAsync(item.ProductId);
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("PRODUCT GELADEN");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine($"Item ID: {item.ProductId}, Product null? {item.Product == null}, Product name: {item.Product.Name}");
-            }
             totalPrice = await UserCartService.GetTotalCartPrice(userId);
-            Console.WriteLine("---------------------------");
-            Console.WriteLine("TOTALPRICE:" + totalPrice);
-            Console.WriteLine("---------------------------");
         } else
         {
             cartItems = await CartService.GetCartItemsAsync();
             totalPrice = await CartService.GetTotalCartPrice();
         }
+
+        var validCartItems = new List<CartItem>();
+        foreach (var item in cartItems)
+        {
+            var product = await ProductService.GetProductByIdAsync(item.ProductId);
+            if (product != null)
+            {
+                item.Product = product;
+                validCartItems.Add(item);
+            }
+            else
+            {
+                if (authenticated)
+                {
+                    await UserCartService.RemoveCartItemFromUserCart(userId, item);
+                }
+                else
+                {
+                    await CartService.RemoveFromCartAsync(item);
+                }
+                // Verwijder helemaal als niet bestaat
+            }
+        }
+        cartItems = validCartItems;
         StateHasChanged();
+    }
+
+    private async Task PlaceOrder()
+    {
+        await LoadCart(); // Zodat producten up to date zijn, evt foutmelding ipv door naar bestellen bij verandering
+
+        // DOE EERST NOG CHECK OF DE CART NIET LEEG IS LOL 
+
+        if (authenticated)
+        {
+            NavigationManager.NavigateTo("/place-order", true);
+        } else
+        {
+            // als niet ingelogd naar ben je al klant(inloggen) / Maak account aan/ Doorgaan zonder registreren pagina
+            NavigationManager.NavigateTo("/checkout-entry", true);
+        }
     }
 
     private async Task<decimal> GetTotalPrice(string userId)
@@ -185,8 +176,16 @@ else
 
     private async Task RemoveFromCart(CartItem cartItem)
     {
-        await CartService.RemoveFromCartAsync(cartItem);
-        cartItems = await CartService.GetCartItemsAsync();
+        if (authenticated)
+        {
+            await UserCartService.RemoveCartItemFromUserCart(userId, cartItem);
+            ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
+            cartItems = cart.CartItems;
+        } else
+        {
+            await CartService.RemoveFromCartAsync(cartItem);
+            cartItems = await CartService.GetCartItemsAsync();
+        }
 
         await LoadCart();
         ToastService.ShowSuccess("Product verwijderd");
@@ -194,10 +193,24 @@ else
 
     private async Task UpdateItem(CartItem cartItem, int quantity)
     {
-        List<CartItem> originalCartItems = await CartService.GetCartItemsAsync();
-        CartItem originalCartItem = originalCartItems.FirstOrDefault(item => item.Id == cartItem.Id);
+        int stock;
+        List<CartItem> originalCartItems;
+        CartItem originalCartItem;
 
-        int stock = originalCartItem.Product.Stock;
+        if (authenticated)
+        {
+            ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
+            originalCartItems = cart.CartItems;
+            originalCartItem = originalCartItems.FirstOrDefault(item => item.Id == cartItem.Id);
+
+            stock = originalCartItem.Product.Stock;
+        } else
+        {
+            originalCartItems = await CartService.GetCartItemsAsync();
+            originalCartItem = originalCartItems.FirstOrDefault(item => item.Id == cartItem.Id);
+
+            stock = originalCartItem.Product.Stock;
+        }
 
         if (quantity > stock)
         {
@@ -212,10 +225,18 @@ else
         }
         else
         {
-            await CartService.UpdateCartItemQuantity(cartItem, quantity);
+            if (authenticated)
+            {
+                await UserCartService.UpdateUserCartItemQuantity(userId, cartItem, quantity);
+            } else
+            {
+                await CartService.UpdateCartItemQuantity(cartItem, quantity);
+            }
+
             await LoadCart();
             ToastService.ShowSuccess("Product geupdate");
         }
+
     }
 
     public void Dispose()

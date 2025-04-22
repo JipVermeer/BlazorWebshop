@@ -1,0 +1,51 @@
+﻿@page "/checkout-entry"
+@using BlazorWebshop.Components.Account
+@using BlazorWebshop.Components.Account.Pages
+@using BlazorWebshop.Data
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using System.ComponentModel.DataAnnotations
+
+@inject LocalCartService CartService
+@inject IShoppingCartService UserCartService
+@inject IProductService ProductService
+@inject IToastService ToastService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject ILogger<Login> Logger
+@inject NavigationManager NavigationManager
+@inject IdentityRedirectManager RedirectManager
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+<BlazoredToasts />
+
+<PageTitle>CheckoutEntry</PageTitle>
+<h3 class="mb-3">Bestellen</h3>
+
+<h4>Bent u al klant?</h4>
+<button @onclick="() => NavigateToLogin()">Inloggen</button>
+<h4>Wilt u een account aanmaken?</h4>
+<button @onclick="() => NavigateToSignup()">Inloggen</button>
+<h4>Doorgaan als gast?</h4>
+<button @onclick="() => NavigateToCheckout()">Doorgaan</button>
+
+@code {
+    private void NavigateToLogin()
+    {
+        NavigationManager.NavigateTo($"/Account/Login?returnUrl=/checkout-entry", forceLoad: true);
+    }
+
+    private void NavigateToCheckout()
+    {
+        NavigationManager.NavigateTo("/place-order", forceLoad: true);
+    }
+
+    private void NavigateToSignup()
+    {
+        NavigationManager.NavigateTo($"/Account/Register?returnUrl=/checkout-entry", forceLoad: true);
+    }
+}

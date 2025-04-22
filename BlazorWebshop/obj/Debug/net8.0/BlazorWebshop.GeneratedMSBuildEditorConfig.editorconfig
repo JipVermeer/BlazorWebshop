@@ -182,6 +182,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVByb2R1Y3RzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/JipVe/source/repos/BlazorWebshop/BlazorWebshop/Components/Pages/CheckoutEntry.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDaGVja291dEVudHJ5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/JipVe/source/repos/BlazorWebshop/BlazorWebshop/Components/Pages/EditCategory.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0Q2F0ZWdvcnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -192,6 +196,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/JipVe/source/repos/BlazorWebshop/BlazorWebshop/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JipVe/source/repos/BlazorWebshop/BlazorWebshop/Components/Pages/PlaceOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQbGFjZU9yZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/JipVe/source/repos/BlazorWebshop/BlazorWebshop/Components/Pages/ProductManager.razor]

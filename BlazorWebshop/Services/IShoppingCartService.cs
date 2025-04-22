@@ -12,6 +12,7 @@ namespace BlazorWebshop.Services
         Task<int> GetShoppingCartCountAsync(string userId);
         Task<decimal> GetTotalCartPrice(string userId);
         Task MergeCarts(List<CartItem> guestCartItems, string userId);
+        Task ClearCart(string userId);
 
         void NotifyStateChanged();
     }

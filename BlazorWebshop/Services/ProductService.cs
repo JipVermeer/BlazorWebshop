@@ -6,14 +6,7 @@ namespace BlazorWebshop.Services
 {
     public class ProductService : IProductService
     {
-        //private readonly ApplicationDbContext _context;
-
         private readonly IDbContextFactory<ApplicationDbContext> _contextFactory;
-
-        //public ProductService(ApplicationDbContext context)
-        //{
-        //    _context = context;
-        //}
 
         public ProductService(IDbContextFactory<ApplicationDbContext> contextFactory)
         {

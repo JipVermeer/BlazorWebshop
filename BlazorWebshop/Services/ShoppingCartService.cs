@@ -22,6 +22,7 @@ namespace BlazorWebshop.Services
             var result = await _context.ShoppingCarts
                 .Where(u => u.UserId == userId)
                 .Include(sc => sc.CartItems)
+                                    .ThenInclude(ci => ci.Product)
                 .FirstOrDefaultAsync();
 
             return result ?? new ShoppingCart
@@ -73,38 +74,54 @@ namespace BlazorWebshop.Services
 
         public async Task RemoveCartItemFromUserCart(string userId, CartItem item)
         {
-            //// Als product bestaat, als er meer dan 1 zijn verander quantity, anders (als 1) haal hele item uit mandje
-            //var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart") ?? new List<CartItem>();
+            await using var _context = _contextFactory.CreateDbContext();
 
-            //var existingItem = cart.FirstOrDefault(c => c.ProductId == item.ProductId);
+            ShoppingCart cart = await _context.ShoppingCarts
+                .Where(u => u.UserId == userId)
+                .Include(sc => sc.CartItems)
+                    .ThenInclude(ci => ci.Product)
+                .FirstOrDefaultAsync();
 
-            //if (existingItem != null)
-            //{
-            //    if (existingItem.Quantity > 1)
-            //    {
-            //        existingItem.Quantity -= 1;
-            //    }
-            //    else
-            //    {
-            //        cart.Remove(existingItem);
-            //    }
-            //}
+            CartItem existingItem = cart.CartItems.FirstOrDefault(c => c.ProductId == item.ProductId);
 
-            //await _localStorage.SetItemAsync("cart", cart);
-            //NotifyStateChanged();
+
+            if (existingItem != null)
+            {
+                if (existingItem.Quantity > 1)
+                {
+                    existingItem.Quantity -= 1;
+                }
+                else
+                {
+                    _context.CartItems.Remove(existingItem);
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            NotifyStateChanged();
         }
 
         public async Task UpdateUserCartItemQuantity(string userId, CartItem item, int quantity)
         {
-            //var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+            await using var _context = _contextFactory.CreateDbContext();
 
-            //var itemInCart = cart.FirstOrDefault(i => i.Id == item.Id);
+            ShoppingCart cart = await _context.ShoppingCarts
+                .Where(u => u.UserId == userId)
+                .Include(sc => sc.CartItems)
+                    .ThenInclude(ci => ci.Product)
+                .FirstOrDefaultAsync();
 
-            //if (itemInCart != null)
-            //{
-            //    itemInCart.Quantity = quantity;
-            //    await _localStorage.SetItemAsync("cart", cart);
-            //    NotifyStateChanged();
+            //if (cart == null || cart.CartItems == null)
+            //    return; // Vraag me altijd af of dit nou wel of niet moet? Vraag ff
+
+            CartItem itemInCart = cart.CartItems.FirstOrDefault(i => i.Id == item.Id);
+
+            if (itemInCart != null)
+            {
+                itemInCart.Quantity = quantity;
+                await _context.SaveChangesAsync();
+                NotifyStateChanged();
+            }
         }
 
 
@@ -118,18 +135,18 @@ namespace BlazorWebshop.Services
                     .ThenInclude(ci => ci.Product)
                 .FirstOrDefaultAsync();
 
-            List<CartItem> cartItems = cart.CartItems;
-
             int totalQuantity = 0;
 
-            foreach (var item in cartItems)
+            if (cart != null)
             {
-                totalQuantity += item.Quantity;
+                List<CartItem> cartItems = cart.CartItems;
+                foreach (var item in cartItems)
+                {
+                    totalQuantity += item.Quantity;
+                }
             }
-
             return totalQuantity;
         }
-
         public async Task<decimal> GetTotalCartPrice(string userId)
         {
             await using var _context = _contextFactory.CreateDbContext();
@@ -155,57 +172,6 @@ namespace BlazorWebshop.Services
             }
             return totalPrice;
         }
-
-        //public async Task MergeCarts(List<CartItem> guestCartItems, string userId)
-        //{
-        //    await using var _context = _contextFactory.CreateDbContext();
-
-        //    ShoppingCart cart = await _context.ShoppingCarts
-        //        .Where(u => u.UserId == userId)
-        //        .Include(sc => sc.CartItems)
-        //            .ThenInclude(ci => ci.Product)
-        //        .FirstOrDefaultAsync();
-
-        //    if (cart == null)
-        //    {
-        //        cart = new ShoppingCart
-        //        {
-        //            UserId = userId,
-        //            CartItems = new List<CartItem>()
-        //        };
-        //        _context.ShoppingCarts.Add(cart);
-        //    }
-
-        //    foreach (CartItem guestCartItem in guestCartItems)
-        //    {
-        //        CartItem existingItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == guestCartItem.ProductId);
-        //        if (existingItem != null)
-        //        {
-        //            existingItem.Quantity += guestCartItem.Quantity;
-        //        }
-        //        else
-        //        {
-        //            cart.CartItems.Add(guestCartItem);
-        //        }
-        //    }
-
-        //    // CALL EMPTY/DELETE GUEST/LOCAL CART FUNCTION HERE
-        //    await _context.SaveChangesAsync();
-        //    NotifyStateChanged();
-        //}
-
-        //public async Task MergeCarts(List<CartItem> guestCartItems, string userId)
-        //{
-        //    if (guestCartItems == null || !guestCartItems.Any())
-        //    {
-        //        return;
-        //    }
-
-        //    foreach (CartItem guestCartItem in guestCartItems)
-        //    {
-        //        await AddCartItemToUserCart(userId, guestCartItem);
-        //    }
-        //}
 
         public async Task MergeCarts(List<CartItem> guestCartItems, string userId)
         {
@@ -236,11 +202,8 @@ namespace BlazorWebshop.Services
                 if (existingItem != null)
                 {
                     existingItem.Quantity += guestItem.Quantity;
-                    // hier nog check of dat product niet al max in het mandje zit 
-                    Console.WriteLine("----------------------------------");
-                    Console.WriteLine("PRODUCT STOCK" + existingItem.Product.Stock);
-                    Console.WriteLine("----------------------------------");
 
+                    // Check of dit de voorraad niet overschrijdt
                     if (existingItem.Quantity > existingItem.Product.Stock)
                     {
                         existingItem.Quantity = existingItem.Product.Stock;
@@ -248,7 +211,12 @@ namespace BlazorWebshop.Services
                 }
                 else
                 {
-                    cart.CartItems.Add(guestItem);
+                    //cart.CartItems.Add(guestItem);
+                    cart.CartItems.Add(new CartItem
+                    {
+                        ProductId = guestItem.ProductId,
+                        Quantity = guestItem.Quantity
+                    });
                 }
             }
 
@@ -256,6 +224,24 @@ namespace BlazorWebshop.Services
             NotifyStateChanged();
         }
 
+        public async Task ClearCart(string userId)
+        {
+            await using var _context = _contextFactory.CreateDbContext();
+
+            var cart = await _context.ShoppingCarts
+               .Where(u => u.UserId == userId)
+               .Include(sc => sc.CartItems)
+                                   .ThenInclude(ci => ci.Product)
+               .FirstOrDefaultAsync();
+
+
+            if (cart != null && cart.CartItems.Any())
+            {
+                _context.CartItems.RemoveRange(cart.CartItems);
+                await _context.SaveChangesAsync();
+                NotifyStateChanged();
+            }
+        }
 
         public void NotifyStateChanged()
         {

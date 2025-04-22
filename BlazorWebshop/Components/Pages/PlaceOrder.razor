@@ -1,0 +1,156 @@
+﻿@page "/place-order"
+@using BlazorWebshop.Components.Account
+@using BlazorWebshop.Data
+@using BlazorWebshop.Models
+@using BlazorWebshop.Models.Entities
+@using BlazorWebshop.Services
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Identity
+@using System.Text.RegularExpressions
+
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject NavigationManager NavigationManager
+@inject IdentityUserAccessor UserAccessor
+@inject IdentityRedirectManager RedirectManager
+@inject ICategoryService CategoryService
+@inject NotificationService NotificationService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IShoppingCartService UserCartService
+@inject LocalCartService GuestCartService
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+<BlazoredToasts />
+
+<PageTitle>Order</PageTitle>
+<h3 class="mb-3">Bezorgadres</h3>
+
+<EditForm Model="deliveryAddressModel" OnSubmit="HandleSubmit">
+    <div>
+        <label for="firstName">Voornaam</label>
+        <InputText id="firstName" @bind-Value="deliveryAddressModel.FirstName" class="form-control" />
+    </div>
+    <div>
+        <label for="prefix">Tussenvoegsel</label>
+        <InputText id="prefix" @bind-Value="deliveryAddressModel.Prefix" class="form-control" />
+    </div>
+    <div>
+        <label for="lastName">Achternaam</label>
+        <InputText id="lastName" @bind-Value="deliveryAddressModel.LastName" class="form-control" />
+    </div>
+    <div>
+        <label for="street">Straat</label>
+        <InputText id="street" @bind-Value="deliveryAddressModel.Street" class="form-control" />
+    </div>
+    <div>
+        <label for="houseNumber">Adres</label>
+        <InputText id="houseNumber" @bind-Value="deliveryAddressModel.HouseNumber" class="form-control" />
+    </div>
+    <div>
+        <label for="zipCode">Postcode</label>
+        <InputText id="zipCode" @bind-Value="deliveryAddressModel.ZipCode" class="form-control" />
+    </div>
+    <div>
+        <label for="city">Stad</label>
+        <InputText id="city" @bind-Value="deliveryAddressModel.City" class="form-control" />
+    </div>
+    <div class="mb-3 text-center">
+        <span class="text-danger">@errorMessage</span>
+    </div>
+    <h3 class="mb-3">Betaalmethode</h3>
+    <p> Betaalmethode moet nog worden toegevoegd.</p>
+    <button type="submit" class="btn btn-primary mt-2">Bestelling plaatsen</button>
+</EditForm>
+
+@code {
+    private DeliveryAddressModel deliveryAddressModel = new DeliveryAddressModel();
+
+    private string userId;
+    private bool authenticated;
+    private string errorMessage = string.Empty;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        authenticated = user.Identity?.IsAuthenticated ?? false;
+
+        if (authenticated)
+        {
+            userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var applicationUser = await UserManager.GetUserAsync(user);
+
+            if (applicationUser != null)
+            {
+                deliveryAddressModel.FirstName = applicationUser.FirstName;
+                deliveryAddressModel.Prefix = applicationUser.Prefix;
+                deliveryAddressModel.LastName = applicationUser.LastName;
+                deliveryAddressModel.Street = applicationUser.Street;
+                deliveryAddressModel.HouseNumber = applicationUser.HouseNumber;
+                deliveryAddressModel.ZipCode = applicationUser.Zipcode;
+                deliveryAddressModel.City = applicationUser.City;
+            }
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (userId != null)
+            {
+                List<CartItem> LocalCartItems = await GuestCartService.GetCartItemsAsync();
+                if (LocalCartItems.Count > 0)
+                {
+                    ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
+                    List<CartItem> cartItems = cart.CartItems;
+                    bool isMerged = false;
+                    if (cart.CartItems != null && cart.CartItems.Count > 0)
+                    {
+                        isMerged = true; 
+                    }
+
+                    await UserCartService.MergeCarts(LocalCartItems, userId);
+                    await GuestCartService.EmptyCart();
+
+                    // als er nog iets in het gebruikersmandje zat, stuur eerst ff terug naar mandje met melding
+                    if (isMerged)
+                    {
+                        await NotificationService.SetNotification("U had nog producten in uw winkelmandje, deze zijn samengevoegd", ToastLevel.Success);
+                        NavigationManager.NavigateTo("/shopping-cart", true);
+                    }
+                }
+            }
+        }
+    }
+
+    async Task HandleSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(deliveryAddressModel.FirstName) || string.IsNullOrWhiteSpace(deliveryAddressModel.LastName) || 
+            string.IsNullOrWhiteSpace(deliveryAddressModel.Street) || string.IsNullOrWhiteSpace(deliveryAddressModel.HouseNumber) ||
+            string.IsNullOrWhiteSpace(deliveryAddressModel.ZipCode) || string.IsNullOrWhiteSpace(deliveryAddressModel.City))
+        {
+            errorMessage = "Vul AUB alle velden in.";
+        }
+        else if (!Regex.IsMatch(deliveryAddressModel.ZipCode, @"^\d{4}[A-Z]{2}$"))
+        {
+            errorMessage = "Gebruik een geldige postcode, bijv. 1234AB.";
+        }
+        else
+        {
+            if (authenticated)
+            {
+                // sla order op in database 
+            }
+            // pas stock aan 
+            // leeg mandje 
+
+            // ga naar bevestigingspagina 
+        }
+        // maak pagina om bestelgeschiedenis in te zien voor klanten 
+    }
+}

@@ -10,8 +10,6 @@
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
-@* @inject IShoppingCartService UserCartService
-@inject LocalCartService GuestCartService *@
 
 <PageTitle>Log in</PageTitle>
 
@@ -96,8 +94,15 @@
         if (result.Succeeded)
         {
             Logger.LogInformation("User logged in.");
-            // Changed this to homepage instead of returnUrl because of mergecarts issue 
-            RedirectManager.RedirectTo("/");
+
+            if (ReturnUrl == "/checkout-entry")
+            {
+                RedirectManager.RedirectTo("/place-order");
+            } else
+            {
+                // Changed this to homepage instead of returnUrl because of mergecarts issue
+                RedirectManager.RedirectTo("/");
+            }
         }
         else if (result.RequiresTwoFactor)
         {

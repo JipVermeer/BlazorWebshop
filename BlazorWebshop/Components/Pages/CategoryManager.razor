@@ -16,7 +16,7 @@
 
 @if (categories.Count == 0)
 {
-    <p><em>Loading categories...</em></p>
+    <p><em>Er zijn (nog) geen categorieën. </em></p>
 }
 else
 {
@@ -41,9 +41,8 @@ else
             }
         </tbody>
     </table>
-
-    <button class="btn btn-primary" @onclick="AddCategory">Categorie toevoegen</button>
 }
+<button class="btn btn-primary" @onclick="AddCategory">Categorie toevoegen</button>
 
 @code {
     List<Category> categories = new List<Category>();

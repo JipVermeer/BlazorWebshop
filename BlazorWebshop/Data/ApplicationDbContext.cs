@@ -13,10 +13,10 @@ namespace BlazorWebshop.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-
-        //public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +41,16 @@ namespace BlazorWebshop.Data
                 .HasMany(sc => sc.CartItems)
                 .WithOne(ci => ci.ShoppingCart)
                 .HasForeignKey(ci => ci.ShoppingCartId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<OrderProduct>()
+                .Property(op => op.Price)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Order>()
+                .HasMany(o => o.OrderProducts)
+                .WithOne(op => op.Order)
+                .HasForeignKey(op => op.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

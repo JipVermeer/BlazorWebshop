@@ -14,10 +14,12 @@
 @inject IdentityUserAccessor UserAccessor
 @inject IdentityRedirectManager RedirectManager
 @inject ICategoryService CategoryService
+@inject IProductService ProductService
 @inject NotificationService NotificationService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IShoppingCartService UserCartService
 @inject LocalCartService GuestCartService
+@inject IOrderService OrderService
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 <BlazoredToasts />
@@ -130,27 +132,65 @@
 
     async Task HandleSubmit()
     {
-        if (string.IsNullOrWhiteSpace(deliveryAddressModel.FirstName) || string.IsNullOrWhiteSpace(deliveryAddressModel.LastName) || 
-            string.IsNullOrWhiteSpace(deliveryAddressModel.Street) || string.IsNullOrWhiteSpace(deliveryAddressModel.HouseNumber) ||
-            string.IsNullOrWhiteSpace(deliveryAddressModel.ZipCode) || string.IsNullOrWhiteSpace(deliveryAddressModel.City))
+        try
         {
-            errorMessage = "Vul AUB alle velden in.";
-        }
-        else if (!Regex.IsMatch(deliveryAddressModel.ZipCode, @"^\d{4}[A-Z]{2}$"))
-        {
-            errorMessage = "Gebruik een geldige postcode, bijv. 1234AB.";
-        }
-        else
-        {
-            if (authenticated)
+            if (string.IsNullOrWhiteSpace(deliveryAddressModel.FirstName) || string.IsNullOrWhiteSpace(deliveryAddressModel.LastName) ||
+                string.IsNullOrWhiteSpace(deliveryAddressModel.Street) || string.IsNullOrWhiteSpace(deliveryAddressModel.HouseNumber) ||
+                string.IsNullOrWhiteSpace(deliveryAddressModel.ZipCode) || string.IsNullOrWhiteSpace(deliveryAddressModel.City))
             {
-                // sla order op in database 
+                errorMessage = "Vul AUB alle velden in.";
             }
-            // pas stock aan 
-            // leeg mandje 
+            else if (!Regex.IsMatch(deliveryAddressModel.ZipCode, @"^\d{4}[A-Z]{2}$"))
+            {
+                errorMessage = "Gebruik een geldige postcode, bijv. 1234AB.";
+            }
+            else
+            {
+                if (authenticated)
+                {
+                    // Haal shoppingcart eerst op om mee te geven
+                    ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
+                    // sla order op in database
+                    await OrderService.PlaceOrderAsync(cart);
 
-            // ga naar bevestigingspagina 
+                    // pas stock aan (bij product class)
+                    // for each cartitem get quantity en dan dat van de product stock afhalen
+                    foreach (CartItem item in cart.CartItems)
+                    {
+                        int quantity = item.Quantity;
+                        int productId = item.ProductId;
+
+                        item.Product.Stock -= quantity;
+                        await ProductService.UpdateProductAsync(item.Product, productId);
+                    }
+                    // leeg mandje
+                    await UserCartService.ClearCart(userId);
+                }
+                else
+                {
+                    // guest
+                    // pas stock aan
+                    List<CartItem> cartItems = await GuestCartService.GetCartItemsAsync();
+                    foreach (CartItem item in cartItems)
+                    {
+                        int quantity = item.Quantity;
+                        int productId = item.ProductId;
+
+                        item.Product.Stock -= quantity;
+                        await ProductService.UpdateProductAsync(item.Product, productId);
+                    }
+
+                    // leeg mandje
+                    await GuestCartService.EmptyCart();
+                }
+                // ga naar bevestigingspagina
+                NavigationManager.NavigateTo("/order-confirmation", true);
+            }
+        } catch (Exception ex)
+        {
+            errorMessage = "Er is iets misgegaan bij het plaatsen van uw bestelling. Probeer het later opnieuw.";
+            Console.Error.WriteLine(ex);
         }
-        // maak pagina om bestelgeschiedenis in te zien voor klanten 
     }
-}
+    }
+

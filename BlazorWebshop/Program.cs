@@ -61,12 +61,8 @@ namespace BlazorWebshop
             builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
             builder.Services.AddSingleton<CategoryStateService>();
             builder.Services.AddScoped<LocalCartService>();
-
             builder.Services.AddScoped<NotificationService>();
-            //builder.Services.AddSingleton<CartStateService>();
-            //builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
-
-
+            builder.Services.AddScoped<IOrderService, OrderService>();
 
             builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()

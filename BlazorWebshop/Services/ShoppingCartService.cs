@@ -57,7 +57,6 @@ namespace BlazorWebshop.Services
 
             if (existingItem != null)
             {
-                // CHECK FF OF JE NU WEL DAADWERKELIJK HET CARTITEM AANPAST EN NIET DE REFERENTIE 
                 existingItem.Quantity += item.Quantity;
                 // _context.CartItems.Update(existingItem); // check ff of dit noodzakelijk is of savechangesasync al prima is
             }
@@ -180,7 +179,7 @@ namespace BlazorWebshop.Services
             var cart = await _context.ShoppingCarts
                 .Where(u => u.UserId == userId)
                 .Include(sc => sc.CartItems)
-                                    .ThenInclude(ci => ci.Product)
+                .ThenInclude(ci => ci.Product)
                 .FirstOrDefaultAsync();
 
             if (cart == null)
@@ -231,7 +230,7 @@ namespace BlazorWebshop.Services
             var cart = await _context.ShoppingCarts
                .Where(u => u.UserId == userId)
                .Include(sc => sc.CartItems)
-                                   .ThenInclude(ci => ci.Product)
+               .ThenInclude(ci => ci.Product)
                .FirstOrDefaultAsync();
 
 

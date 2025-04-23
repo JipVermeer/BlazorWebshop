@@ -16,16 +16,19 @@
 
 @if (products.Count == 0)
 {
-    <p><em>Loading categories...</em></p>
+    <p><em>Er zijn (nog) geen producten.</em></p>
 }
 else
 {
+    <p>Klik op een categorie om deze uit te klappen.</p>
     @foreach (var category in products)
     {
-        <h5>@category.Name</h5>
+        <h5 @onclick="@(() => ToggleCategory(category.Id))" style="cursor: pointer;"> 
+            @(expandedCategories.Contains(category.Id) ? "▼ " : "▶ ")@category.Name</h5>
 
-        @if (category.Products != null && category.Products.Any())
-        {
+        @if (expandedCategories.Contains(category.Id)) {
+        
+            @if (category.Products != null && category.Products.Any()){
             <table class="table">
                 <thead>
                     <tr>
@@ -61,18 +64,16 @@ else
             <p>Er zijn nog geen producten in deze categorie.</p>
         }
     }
-
-    <button class="btn btn-primary" @onclick="AddProduct">Product toevoegen</button>
+}
+    <button class="btn btn-primary mt-3" @onclick="AddProduct">Product toevoegen</button>
 }
 
 @code {
     List<Category> products = new List<Category>();
     private bool notificationShown = false;
 
-    // protected override void OnInitialized()
-    // {
-    //     NotificationService.ShowNotification();
-    // }
+    //HashSet: soort lijst/collectie maar sneller + je kan geen dubbele (identieke) items hebben (nifty!)
+    HashSet<int> expandedCategories = new();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -104,4 +105,21 @@ else
         NavigationManager.NavigateTo($"/edit-product");
     }
 
+    void ToggleCategory(int categoryId)
+    {
+        if (expandedCategories.Contains(categoryId))
+        {
+            expandedCategories.Remove(categoryId); 
+        }
+        else
+        {
+            expandedCategories.Add(categoryId);
+        }
+
+        // Kan ook korter:
+        // if (!expandedCategories.Add(categoryId))
+        // {
+        //     expandedCategories.Remove(categoryId);
+        // }
+    }
 }

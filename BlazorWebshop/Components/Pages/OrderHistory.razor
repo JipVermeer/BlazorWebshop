@@ -1,0 +1,73 @@
+﻿@page "/order-history"
+@using System.Security.Claims
+@using BlazorWebshop.Models.Entities
+@inject IOrderService OrderService
+
+<BlazoredToasts />
+
+<PageTitle>Order</PageTitle>
+<h3 class="mb-3">Bestelgeschiedenis</h3>
+
+@if (orders == null)
+{
+    <p>Laden...</p>
+}
+else if (orders.Count == 0)
+{
+    <p>Uw heeft nog geen bestellingen gedaan.</p>
+}
+else
+{
+    @foreach (Order order in orders)
+    {
+        <h4>Bestelling van @order.OrderDate.ToString("dddd dd MMMM yyyy", new System.Globalization.CultureInfo("nl-NL"))</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Prijs p/s</th>
+                <th>Totaalprijs</th>
+                <th>Aantal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (OrderProduct product in order.OrderProducts)
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.Price</td>
+                    <td>@(@product.Price * @product.Quantity)</td>
+                    <td>@product.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+        <p><strong>Totaalprijs: </strong>
+            @* nifty ass lambda expression again, just a loop: foreach product calculate price and add em all *@
+            @order.OrderProducts.Sum(product => product.Price * product.Quantity)
+        </p>
+    }
+}
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    private bool authenticated;
+    private string userId;
+    List<Order> orders;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+
+        authenticated = user.Identity?.IsAuthenticated ?? false;
+
+        if (authenticated)
+        {
+            userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        }
+        orders = await OrderService.GetUserOrdersAsync(userId);
+    }
+}

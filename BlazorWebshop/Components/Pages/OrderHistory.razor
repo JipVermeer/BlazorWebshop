@@ -2,6 +2,7 @@
 @using System.Security.Claims
 @using BlazorWebshop.Models.Entities
 @inject IOrderService OrderService
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 <BlazoredToasts />
 
@@ -18,10 +19,15 @@ else if (orders.Count == 0)
 }
 else
 {
+    <p>Klik op een besteldatum om de bestelling uit te klappen.</p>
     @foreach (Order order in orders)
     {
-        <h4>Bestelling van @order.OrderDate.ToString("dddd dd MMMM yyyy", new System.Globalization.CultureInfo("nl-NL"))</h4>
+        <h4 @onclick="@(() => ToggleOrder(order.Id))" style="cursor: pointer;">
+            @(expandedOrders.Contains(order.Id) ? "▼ " : "▶ ")Bestelling van @order.OrderDate.ToString("dddd dd MMMM yyyy", new System.Globalization.CultureInfo("nl-NL"))
+        </h4>
 
+        @if (expandedOrders.Contains(order.Id))
+        {
     <table class="table">
         <thead>
             <tr>
@@ -48,14 +54,18 @@ else
             @order.OrderProducts.Sum(product => product.Price * product.Quantity)
         </p>
     }
+    }
 }
 
 @code {
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
+
     private bool authenticated;
     private string userId;
     List<Order> orders;
+
+    HashSet<int> expandedOrders = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -69,5 +79,17 @@ else
             userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         }
         orders = await OrderService.GetUserOrdersAsync(userId);
+    }
+
+    void ToggleOrder(int orderId)
+    {
+        if (expandedOrders.Contains(orderId))
+        {
+            expandedOrders.Remove(orderId);
+        }
+        else
+        {
+            expandedOrders.Add(orderId);
+        }
     }
 }

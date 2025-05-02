@@ -38,7 +38,7 @@ namespace BlazorWebshop.Services
         //        }
         //    }
 
-        // MOET VIA SESSION STORAGE VANWEGE SCOPED/SINGLETON PROBLEEM
+        // Moet via session storage vanwege scoped/singleton probleem -> eerst had ik bovenstaande
 
         private readonly IJSRuntime _jsRuntime;
         private readonly IToastService _toastService;

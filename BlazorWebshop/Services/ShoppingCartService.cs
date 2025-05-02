@@ -13,7 +13,6 @@ namespace BlazorWebshop.Services
         {
             _contextFactory = contextFactory;
         }
-
         public async Task<ShoppingCart> GetUserShoppingCartAsync(string userId)
         {
             // The await 'using' ensures that the DbContext is disposed of asynchronously as well when the scope ends (aldus internet lol)
@@ -86,14 +85,14 @@ namespace BlazorWebshop.Services
 
             if (existingItem != null)
             {
-                if (existingItem.Quantity > 1)
-                {
-                    existingItem.Quantity -= 1;
-                }
-                else
-                {
-                    _context.CartItems.Remove(existingItem);
-                }
+                //if (existingItem.Quantity > 1)
+                //{
+                //    existingItem.Quantity -= 1;
+                //}
+                //else
+                //{
+                _context.CartItems.Remove(existingItem);
+                //}
             }
 
             await _context.SaveChangesAsync();

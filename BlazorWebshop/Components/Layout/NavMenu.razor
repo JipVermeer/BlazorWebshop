@@ -7,6 +7,7 @@
 @inject ICategoryService CategoryService
 @inject ILocalStorageService LocalStorage
 @inject IShoppingCartService UserCartService
+@inject IProductService ProductService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @rendermode @(new InteractiveServerRenderMode(prerender: false)) 
 
@@ -196,12 +197,48 @@
 
     private async Task LoadProductCount()
     {
+        // Make sure cartItems are up to date/synced with product stock
+        List<CartItem> cartItems;
+
         if(authenticated)
+        {
+            ShoppingCart cart = await UserCartService.GetUserShoppingCartAsync(userId);
+            cartItems = cart.CartItems;
+        } else
+        {
+            cartItems = await CartState.GetCartItemsAsync();
+        }
+
+        var validCartItems = new List<CartItem>();
+        foreach (var item in cartItems)
+        {
+            var product = await ProductService.GetProductByIdAsync(item.ProductId);
+            if (product != null && product.Stock > 0)
+            {
+                item.Product = product;
+                validCartItems.Add(item);
+            }
+            else
+            {
+                if (authenticated)
+                {
+                    await UserCartService.RemoveCartItemFromUserCart(userId, item);
+                }
+                else
+                {
+                    await CartState.RemoveFromCartAsync(item);
+                }
+                // Verwijder helemaal als niet bestaat
+            }
+        }
+        cartItems = validCartItems;
+
+        // Count products
+        if (authenticated)
         {
             productCount = await UserCartService.GetShoppingCartCountAsync(userId);
         } else
         {
-            var cartItems = await CartState.GetCartItemsAsync();
             int totalQuantity = 0;
 
             foreach (var item in cartItems)
@@ -211,10 +248,6 @@
 
             productCount = totalQuantity;
         }
-        Console.WriteLine("---------------------------------------");
-        Console.WriteLine("LoadProductCount in NavMenu:" + productCount);
-        Console.WriteLine("---------------------------------------");
-
         StateHasChanged();
     }
 } 

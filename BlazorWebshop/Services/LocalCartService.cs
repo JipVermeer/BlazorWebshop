@@ -41,7 +41,6 @@
 
             return totalPrice;
         }
-
         public async Task<List<CartItem>> GetCartItemsAsync()
         {
             return await _localStorage.GetItemAsync<List<CartItem>>("cart") ?? new List<CartItem>();
@@ -92,14 +91,14 @@
 
             if (existingItem != null)
             {
-                if (existingItem.Quantity > 1)
-                {
-                    existingItem.Quantity -= 1;
-                }
-                else
-                {
-                    cart.Remove(existingItem);
-                }
+                //if (existingItem.Quantity > 1)
+                //{
+                //    existingItem.Quantity -= 1;
+                //}
+                //else
+                //{
+                cart.Remove(existingItem);
+                //}
             }
             await _localStorage.SetItemAsync("cart", cart);
             NotifyStateChanged();
@@ -113,7 +112,7 @@
             //{
             //    cart.Remove(item);
             //}
-            // Blijkbaar is bovenstaande niet handig want je itereert en verwijdert tegelijk
+            // Bovenstaande is niet handig want je itereert en verwijdert tegelijk
             await _localStorage.SetItemAsync("cart", cart);
             NotifyStateChanged();
         }
